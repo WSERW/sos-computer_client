@@ -1,6 +1,8 @@
-import React, {useEffect,useState} from 'react'
+import React, { useState, useEffect } from 'react'
 
-import girl from '../img/girl.svg'
+import '../css/course.css'
+
+import laptop from '../img/laptop.svg'
 import blop from '../img/blop.svg'
 import phone from '../img/phone.svg'
 import phoneSm from '../img/phone_sm.svg'
@@ -25,45 +27,31 @@ import sertificate2 from '../img/sertificate2.png'
 import quest from '../img/quest.svg'
 import faqBoy from '../img/faq_boy.svg'
 
-import Navbar from '../components/Navbar'
-import CourseCards from '../components/course/CourseCards'
+import ProgramCard from '../components/program/ProgramCard'
 import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
 import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
+import { useParams } from 'react-router-dom'
 
-const Index = () => {
+const Course = () => {
+    const params = useParams()
+
     const [data, setData] = useState(null)
-    const [demo, setDemo] = useState(null)
 
-    const [url, setUrl] = useState('')
     useEffect(() => {
         getData()
-        getDemo()
+    }, []);
 
-    },[]);
-
-    const getData = (url = "http://127.0.0.1:8000/") => {
+    const getData = (url = `http://127.0.0.1:8000/course/${params.id}/`) => {
         // const url = 'http://127.0.0.1:8000/'
         // const url = 'https://api.sos-computer.site/'
-        fetch(url,{
+        fetch(url, {
             method: 'GET',
         })
-        .then(response => response.json())
-        .then(response => setData(response))
-        .catch(response => console.log(response,url))
-
-    }
-    const getDemo = (url = "http://127.0.0.1:8000/demo") => {
-        // const url = 'http://127.0.0.1:8000/'
-        // const url = 'https://api.sos-computer.site/'
-        fetch(url,{
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(response => setDemo(response))
-        .catch(response => console.log(response,url))
-
+            .then(response => response.json())
+            .then(response => setData(response))
+            .catch(response => console.log(response, url))
     }
     return (
         <div>
@@ -71,41 +59,22 @@ const Index = () => {
                 <div className="container">
                     <div className="header">
                         <div className="header__text">
-                            <h1>Компьютерные курсы доступны каждому, вместе с <span>сос компьютер</span></h1>
-                            <p>Изучайте курсы программирования, веб дизайн, 3д моделирование, маркетинг, SEO, SMM, с нуля, занимаясь со своим преподавателем онлайн или в сети наших офисов.</p>
+                            <h1>Курс <span>"{data ? data.name : ''}"</span></h1>
+                            <p>{data ? data.description : ''}</p>
                             <ul className="header__list">
-                                <li className="header__item">Подходит для начинающих</li>
-                                <li className="header__item">Индивидуальный график</li>
-                                <li className="header__item">Личный педагог</li>
+                                {data ? data.specs.map(spec =>
+                                    <li className="header__item">{spec.text}</li>
+                                ) : ''}
                             </ul>
-                            <button>Заказать звонок</button>
+                            <button>Скачать программу</button>
                         </div>
                         <div className="header__img">
-                            <img src={girl} alt="girl" />
+                            <img src={laptop} alt="laptop" />
                         </div>
                         <img className="header__blop" src={blop} alt="blop" />
                     </div>
                 </div>
             </header>
-            <section className="ways">
-                <div className="container">
-                    <div className="section__heading">
-                        <div className="heading__icon">
-                            <img src={quest} alt="" />
-                        </div>
-                        <h2>Наши направления</h2>
-                    </div>
-                    <CourseCards courses={data} />
-                </div>
-            </section>
-            <section className="banner">
-                <div className="container">
-                    <div className="banner__wrapper">
-                        <div className="banner__icon">!</div>
-                        <p>Мы следим за акутальностью курса и технологий, чтобы ваши навыки максимально соответствовали реальной работе в iT сфере.</p>
-                    </div>
-                </div>
-            </section>
             <section className="plans">
                 <div className="container">
                     <div className="section__heading">
@@ -115,21 +84,11 @@ const Index = () => {
                         <h2>Варианты обучения</h2>
                     </div>
                     <div className="plans__cards">
-                    {demo?demo.map(plan=>
-                            <PlanCard name={plan.name} descriptions={plan.specs} price={plan.levels[0].price} priceOld={plan.levels[0].price*1.1} />
-                        ):''}
-                    </div>
-                </div>
-            </section>
-            <section className="for">
-                <div className="container">
-                    <div className="for__wrapper">
-                        <h2>Для кого наши курсы</h2>
-                        <ul className="for__list">
-                            <li className="for__item"><span>Детей</span>, чтобы получить современное образование.</li>
-                            <li className="for__item"><span>Студентов</span>, которые хотят стать частью индустрии.</li>
-                            <li className="for__item"><span>Бизнесменов</span>, нуждающихся в сайте, приложении, продвижение своего бренда и разработки софта.</li>
-                        </ul>
+                        {data?data.levels.map(plan=>
+                                <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
+                            ):''}
+                        <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
+                        <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
                     </div>
                 </div>
             </section>
@@ -195,78 +154,18 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-            <section className="abilities">
+            <section className='program'>
                 <div className="container">
                     <div className="section__heading">
                         <div className="heading__icon">
                             <img src={quest} alt="" />
                         </div>
-                        <h2>Как применить знания</h2>
+                        <h2>Программа курса</h2>
                     </div>
-                    <div className="abilities__cards">
-                        <div className="abilities__card">
-                            <div className="abilities__card_head">
-                                <img src={studia} alt="" />
-                            </div>
-                            <div className="abilities__card_body">
-                                <h3>Студия</h3>
-                                <p>Стабильная высокая зарплата, гибкий график и дружный колектив. Нмерго печенья и кофе.</p>
-                                <div className="abilities__card_spec">
-                                    <div className="abilities__card_time">
-                                        <img src={clock} alt="" />
-                                        <img src={minus} alt="" />
-                                        <img src={minus} alt="" />
-                                    </div>
-                                    <div className="abilities__card_money">
-                                        <img src={cash} alt="" />
-                                        <img src={plus} alt="" />
-                                        <img src={plus} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="abilities__card">
-                            <div className="abilities__card_head">
-                                <img src={brand} alt="" />
-                            </div>
-                            <div className="abilities__card_body">
-                                <h3>Свой бренд</h3>
-                                <p>Без навыков и капитала сюда не попасть, но возможное вознаграждение усилий того стоит.</p>
-                                <div className="abilities__card_spec">
-                                    <div className="abilities__card_time">
-                                        <img src={clock} alt="" />
-                                        <img src={minus} alt="" />
-                                        <img src={minus} alt="" />
-                                        <img src={minus} alt="" />
-                                    </div>
-                                    <div className="abilities__card_money">
-                                        <img src={cash} alt="" />
-                                        <img src={plus} alt="" />
-                                        <img src={plus} alt="" />
-                                        <img src={plus} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="abilities__card">
-                            <div className="abilities__card_head">
-                                <img src={freelancer} alt="" />
-                            </div>
-                            <div className="abilities__card_body">
-                                <h3>Фриланс</h3>
-                                <p>Простой, для новичков, путь, который, однако, требует много времени на развите своего профиля.</p>
-                                <div className="abilities__card_spec">
-                                    <div className="abilities__card_time">
-                                        <img src={clock} alt="" />
-                                        <img src={minus} alt="" />
-                                    </div>
-                                    <div className="abilities__card_money">
-                                        <img src={cash} alt="" />
-                                        <img src={plus} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div className="program__cards">
+                        {data ? data.themes.map(theme =>
+                            <ProgramCard number={theme.order} title={theme.name} paragraphs={theme.paragraphs} />
+                        ) : ''}
                     </div>
                 </div>
             </section>
@@ -290,7 +189,6 @@ const Index = () => {
                             <img src={faqBoy} alt="" />
                         </div>
                     </div>
-
                 </div>
             </section>
             <section className="about">
@@ -323,9 +221,9 @@ const Index = () => {
                     <div className="contacts__wrapper">
                         <form action="" className="contacts__form">
                             <label htmlFor="">Оставьте ваше имя</label>
-                            <input type="text" name="" id="" placeholder='Имя...'/>
+                            <input type="text" name="" id="" placeholder='Имя...' />
                             <label htmlFor="">Номер телефона</label>
-                            <input type="text" name="" id="" placeholder='+380...'/>
+                            <input type="text" name="" id="" placeholder='+380...' />
                             <label htmlFor="">Напишите нам</label>
                             <div className="contacts__comment">
                                 <textarea placeholder='Введите текст...'></textarea>
@@ -378,4 +276,4 @@ const Index = () => {
     )
 }
 
-export default Index
+export default Course

@@ -5,9 +5,9 @@ const ModalEnroll = () => {
     <div className='modal__content modal__enroll'>
         <h2>Записаться на курс или получить бесплатную консультацию</h2>
         <form action="">
-            <input type="text" />
-            <input type="text" />
-            <input type="text" />
+            <input type="text" placeholder='Ваше имя:'/>
+            <input type="text" placeholder='Страна, город'/>
+            <input type="text" placeholder='Телефон для связи:'/>
             <button>Получить консультацию</button>
         </form>
     </div>

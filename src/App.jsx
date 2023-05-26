@@ -9,7 +9,7 @@ const App = () => {
         getData()
     },[]);
 
-    const getData = (url = "https://api.sos-computer.site/") => {
+    const getData = (url = "http://127.0.0.1:8000/") => {
         // const url = 'http://127.0.0.1:8000/'
         // const url = 'https://api.sos-computer.site/'
         fetch(url,{
@@ -22,12 +22,12 @@ const App = () => {
     }
     return (
         <div>
-            <div>
+            {/* <div>
                 {data}
             </div>
             
             <input type="text" value={url} onChange={e => {setUrl(e.target.value)}}/>
-            <button onClick={e => {getData(url)}}>Сделать запрос</button>
+            <button onClick={e => {getData(url)}}>Сделать запрос</button> */}
             <Index/>
         </div>
 

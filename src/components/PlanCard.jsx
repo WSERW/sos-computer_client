@@ -7,10 +7,10 @@ const PlanCard = ({ name, stage = 'начальный', descriptions = [], link,
             <h3 className="plan__card_name">{name}</h3>
             <ul className="plan__card_descriptions">
                 {descriptions.map((description) =>
-                    <li className="plan__card_description">{description}</li>
+                    <li className="plan__card_description">{description.text}</li>
                 )}
             </ul>
-            <p className="plan__price">от <strong>{price}</strong> руб/мес <strike><strong>{priceOld}</strong> руб/мес</strike></p>
+            <p className="plan__price">от <strong>{price}</strong> руб/мес <strike><strong>{Math.round(priceOld)}</strong> руб/мес</strike></p>
             <a href={link} className="plan__card_link">Записаться на пробное</a>
             <div className={`plan__card_stage ${stageClass}`}>{stage}</div>
         </div>
