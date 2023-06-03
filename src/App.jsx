@@ -9,9 +9,8 @@ const App = () => {
         getData()
     },[]);
 
-    const getData = (url = "http://127.0.0.1:8000/") => {
+    const getData = (url = 'https://api.sos-computer.site/') => {
         // const url = 'http://127.0.0.1:8000/'
-        // const url = 'https://api.sos-computer.site/'
         fetch(url,{
             method: 'GET',
         })

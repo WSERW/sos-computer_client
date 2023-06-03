@@ -43,9 +43,7 @@ const Course = () => {
         getData()
     }, []);
 
-    const getData = (url = `http://127.0.0.1:8000/course/${params.id}/`) => {
-        // const url = 'http://127.0.0.1:8000/'
-        // const url = 'https://api.sos-computer.site/'
+    const getData = (url = `https://api.sos-computer.site/course/${params.id}/`) => {
         fetch(url, {
             method: 'GET',
         })

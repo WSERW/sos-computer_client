@@ -43,9 +43,7 @@ const Index = () => {
 
     },[]);
 
-    const getData = (url = "http://127.0.0.1:8000/") => {
-        // const url = 'http://127.0.0.1:8000/'
-        // const url = 'https://api.sos-computer.site/'
+    const getData = (url = "https://api.sos-computer.site/") => {
         fetch(url,{
             method: 'GET',
         })
@@ -54,9 +52,7 @@ const Index = () => {
         .catch(response => console.log(response,url))
 
     }
-    const getDemo = (url = "http://127.0.0.1:8000/demo") => {
-        // const url = 'http://127.0.0.1:8000/'
-        // const url = 'https://api.sos-computer.site/'
+    const getDemo = (url = "https://api.sos-computer.site/demo/") => {
         fetch(url,{
             method: 'GET',
         })
@@ -210,7 +206,7 @@ const Index = () => {
                             </div>
                             <div className="abilities__card_body">
                                 <h3>Студия</h3>
-                                <p>Стабильная высокая зарплата, гибкий график и дружный колектив. Нмерго печенья и кофе.</p>
+                                <p>Стабильная высокая зарплата, гибкий график и дружный колектив. Немного печенья и кофе.</p>
                                 <div className="abilities__card_spec">
                                     <div className="abilities__card_time">
                                         <img src={clock} alt="" />
