@@ -61,55 +61,54 @@ const data = [
     },
 ]
 
-const CourseCards = ({courses}) => {
+const CourseCards = ({ courses }) => {
     // let [courses, setCourses] = useState(data)
     console.log(courses)
     let [tag, setTag] = useState('')
-    let filtredCourses = courses?courses.filter((course) => course.tag.includes(tag)):[]
+    let filtredCourses = courses ? courses.filter((course) => course.tag.includes(tag)) : []
 
 
     return (
         <div className="ways__wrapper">
             <Swiper
-                    slidesPerView={5}
-                    centeredSlides={true}
-                    breakpoints={{
-                        0: {
-                          slidesPerView: 1,
-                        },
-                        400:{
-                          slidesPerView:2,
-                        },
-                        639: {
-                          slidesPerView: 3,
-                        },
-                        865:{
-                          slidesPerView:4
-                        },
-                        1000:{
-                          slidesPerView:5
-                        }
-                      }}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-            <div slot="container-start" className="ways__buttons">
-                <div className="ways__categories">
-                    <button onClick={() => { setTag('') }}>Все</button>
-                    <button onClick={() => { setTag('design') }}>Дизайн</button>
-                    <button onClick={() => { setTag('dev') }}>Программирование</button>
-                    <button onClick={() => { setTag('child') }}>Детские</button>
-                    <button onClick={() => { setTag('3d') }}>3д</button>
-                    <button onClick={() => { setTag('market') }}>Маркетинг</button>
-                    <button onClick={() => { setTag('office') }}>Офисные</button>
-                </div>
-                <div className="ways__nav">
-                    {/* <button onClick={useSwiper().slideNext()}><img src={prev} alt="" /></button>
+                slidesPerView={5}
+                // centeredSlides={true}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    400: {
+                        slidesPerView: 2,
+                        centeredSlides: false,
+                    },
+                    639: {
+                        slidesPerView: 3,
+                    },
+                    865: {
+                        slidesPerView: 4
+                    },
+                    1000: {
+                        slidesPerView: 5
+                    }
+                }}
+                onSlideChange={() => console.log('slide change')}
+                onSwiper={(swiper) => console.log(swiper)}
+            >
+                <div slot="container-start" className="ways__buttons">
+                    <div className="ways__categories">
+                        <button onClick={() => { setTag('') }}>Все</button>
+                        <button onClick={() => { setTag('design') }}>Дизайн</button>
+                        <button onClick={() => { setTag('dev') }}>Программирование</button>
+                        <button onClick={() => { setTag('child') }}>Детские</button>
+                        <button onClick={() => { setTag('office') }}>Офисные</button>
+                    </div>
+                    <div className="ways__nav">
+                        {/* <button onClick={useSwiper().slideNext()}><img src={prev} alt="" /></button>
                     <button onClick={useSwiper().slideNext()}><img src={next} alt="" /></button> */}
+                    </div>
                 </div>
-            </div>
-            <div className="ways__slides--">
-                
+                <div className="ways__slides--">
+
                     {filtredCourses.map((course, id) =>
                         <SwiperSlide>
                             <div className="ways__slide">
@@ -117,8 +116,8 @@ const CourseCards = ({courses}) => {
                             </div>
                         </SwiperSlide>
                     )}
-                
-            </div>
+
+                </div>
             </Swiper>
         </div>
     )

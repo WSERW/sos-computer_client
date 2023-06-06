@@ -143,6 +143,14 @@ section {
     border-top-right-radius: 0;
 }
 
+.swiper-slide:nth-child(3n+2) .course__card {
+    background: linear-gradient(152.8deg, #4B57BE 3.46%, #404383 98.2%);
+}
+
+.swiper-slide:nth-child(3n+3) .course__card {
+    background: #9D4F92;
+}
+
 .course__card::before {
     content: '';
     position: absolute;
@@ -155,9 +163,10 @@ section {
 }
 
 .course__card_name {
+    height: 60px;
     color: var(--white);
     font-size: 22px;
-    margin-bottom: 46px;
+    margin-bottom: 16px;
 }
 
 .course__card_descriptions {
@@ -219,6 +228,7 @@ section {
 }
 
 .plan__card_name {
+    height: 60px;
     color: var(--dark-blue);
     font-size: 22px;
     margin-bottom: 20px;
@@ -1068,12 +1078,15 @@ nav {
     .sertificate__img {
         display: none;
     }
+
     .sertificate__form {
         width: 100%;
     }
+
     .sertificate .modal__enroll {
         width: 100%;
     }
+
     .sertificate__form h2 {
         /* 22px */
         font-size: 20px;

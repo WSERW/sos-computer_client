@@ -2,9 +2,24 @@ import React, {useEffect,useState} from 'react'
 
 import girl from '../img/girl.svg'
 import blop from '../img/blop.svg'
-import phone from '../img/phone.svg'
-import phoneSm from '../img/phone_sm.svg'
 import send from '../img/send.svg'
+
+import phoneSm from '../img/phone_sm.svg'
+import hatSm from '../img/hat_sm.svg'
+import penSm from '../img/pen_sm.svg'
+import bookSm from '../img/book_sm.svg'
+import screenSm from '../img/screen_sm.svg'
+import lampSm from '../img/lamp_sm.svg'
+
+
+
+import phone from '../img/phone.svg'
+import screen from '../img/screen.svg'
+import book from '../img/book.svg'
+import palett from '../img/palett.svg'
+import hat from '../img/hat.svg'
+import scroll from '../img/scroll.svg'
+
 
 import freelancer from '../img/freelance.svg'
 import brand from '../img/brand.svg'
@@ -87,7 +102,7 @@ const Index = () => {
                 <div className="container">
                     <div className="section__heading">
                         <div className="heading__icon">
-                            <img src={quest} alt="" />
+                            <img src={hatSm} alt="" />
                         </div>
                         <h2>Наши направления</h2>
                     </div>
@@ -106,7 +121,7 @@ const Index = () => {
                 <div className="container">
                     <div className="section__heading">
                         <div className="heading__icon">
-                            <img src={quest} alt="" />
+                            <img src={bookSm} alt="" />
                         </div>
                         <h2>Варианты обучения</h2>
                     </div>
@@ -133,7 +148,7 @@ const Index = () => {
                 <div className="container">
                     <div className="section__heading">
                         <div className="heading__icon">
-                            <img src={quest} alt="" />
+                            <img src={penSm} alt="" />
                         </div>
                         <h2>Как записаться и учиться</h2>
                     </div>
@@ -143,23 +158,23 @@ const Index = () => {
                             <p>Выбираем направление</p>
                         </div>
                         <div className="how__card">
-                            <img src={phone} alt="" />
+                            <img src={screen} alt="" />
                             <p>Выбираем направление</p>
                         </div>
                         <div className="how__card">
-                            <img src={phone} alt="" />
+                            <img src={book} alt="" />
                             <p>Выбираем направление</p>
                         </div>
                         <div className="how__card">
-                            <img src={phone} alt="" />
+                            <img src={palett} alt="" />
                             <p>Выбираем направление</p>
                         </div>
                         <div className="how__card">
-                            <img src={phone} alt="" />
+                            <img src={hat} alt="" />
                             <p>Выбираем направление</p>
                         </div>
                         <div className="how__card">
-                            <img src={phone} alt="" />
+                            <img src={scroll} alt="" />
                             <p>Выбираем направление</p>
                         </div>
                     </div>
@@ -171,7 +186,7 @@ const Index = () => {
                         <div className="sertificate__img">
                             <div className="section__heading">
                                 <div className="heading__icon">
-                                    <img src={quest} alt="" />
+                                    <img src={penSm} alt="" />
                                 </div>
                                 <h2>Сертификат Sos Computer Academy</h2>
                             </div>
@@ -195,7 +210,7 @@ const Index = () => {
                 <div className="container">
                     <div className="section__heading">
                         <div className="heading__icon">
-                            <img src={quest} alt="" />
+                            <img src={lampSm} alt="" />
                         </div>
                         <h2>Как применить знания</h2>
                     </div>
@@ -298,7 +313,7 @@ const Index = () => {
                         <div className="about__text">
                             <div className="section__heading">
                                 <div className="heading__icon">
-                                    <img src={quest} alt="" />
+                                    <img src={screenSm} alt="" />
                                 </div>
                                 <h2>О нас</h2>
                             </div>
@@ -335,7 +350,7 @@ const Index = () => {
                         <div className="contacts__info">
                             <div className="section__heading">
                                 <div className="heading__icon">
-                                    <img src={quest} alt="" />
+                                    <img src={phoneSm} alt="" />
                                 </div>
                                 <h2>Контакты</h2>
                             </div>
