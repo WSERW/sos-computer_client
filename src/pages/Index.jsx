@@ -46,7 +46,9 @@ import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
 import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
+import Footer from '../components/Footer'
 
+const apiUrl = process.env.REACT_APP_API_URL
 const Index = () => {
     const [data, setData] = useState(null)
     const [demo, setDemo] = useState(null)
@@ -58,7 +60,8 @@ const Index = () => {
 
     },[]);
 
-    const getData = (url = "https://api.sos-computer.site/") => {
+    const getData = () => {
+        const url = apiUrl
         fetch(url,{
             method: 'GET',
         })
@@ -67,7 +70,8 @@ const Index = () => {
         .catch(response => console.log(response,url))
 
     }
-    const getDemo = (url = "https://api.sos-computer.site/demo/") => {
+    const getDemo = () => {
+        const url = apiUrl + "demo/"
         fetch(url,{
             method: 'GET',
         })
@@ -384,7 +388,7 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-            <footer></footer>
+            <Footer/>
         </div>
     )
 }

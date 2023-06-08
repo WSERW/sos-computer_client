@@ -195,6 +195,7 @@ section {
     color: var(--white);
     font-size: 14px;
     text-align: center;
+    position: relative;
 }
 
 .course__card_stage {
@@ -1092,4 +1093,15 @@ nav {
         font-size: 20px;
     }
 
+}
+
+/* footer */
+
+.footer__wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer__wrapper .footer__column:first-child {
+    margin-right: auto;
 }

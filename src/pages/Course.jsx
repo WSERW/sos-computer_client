@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 
 import '../css/course.css'
 
@@ -32,8 +33,9 @@ import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
 import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
-import { useParams } from 'react-router-dom'
+import Footer from '../components/Footer'
 
+const apiUrl = process.env.REACT_APP_API_URL
 const Course = () => {
     const params = useParams()
 
@@ -43,7 +45,8 @@ const Course = () => {
         getData()
     }, []);
 
-    const getData = (url = `https://api.sos-computer.site/course/${params.id}/`) => {
+    const getData = () => {
+        const url = `${apiUrl}course/${params.id}/`
         fetch(url, {
             method: 'GET',
         })
@@ -83,10 +86,8 @@ const Course = () => {
                     </div>
                     <div className="plans__cards">
                         {data?data.levels.map(plan=>
-                                <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
+                                <PlanCard name={plan.name} descriptions={plan.specs} stage={plan.stage} price={plan.price} discount={plan.discount} />
                             ):''}
-                        <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
-                        <PlanCard name={'Общие детские группы'} descriptions={['Длительность от 9 до 18 месяцев', 'Доступ к материалам курса навсегда', 'Больше 15 направлений']} stage={'6 - 18 лет'} price={5400} priceOld={6000} />
                     </div>
                 </div>
             </section>
@@ -269,7 +270,7 @@ const Course = () => {
                     </div>
                 </div>
             </section>
-            <footer></footer>
+            <Footer/>
         </div>
     )
 }
