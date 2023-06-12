@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { getCourse } from '../api'
 
 import '../css/course.css'
 
@@ -33,7 +34,6 @@ import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
 import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
-import Footer from '../components/Footer'
 
 const apiUrl = process.env.REACT_APP_API_URL
 const Course = () => {
@@ -42,18 +42,8 @@ const Course = () => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        getData()
+        setData(getCourse(params.id))
     }, []);
-
-    const getData = () => {
-        const url = `${apiUrl}course/${params.id}/`
-        fetch(url, {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(response => setData(response))
-            .catch(response => console.log(response, url))
-    }
     return (
         <div>
             <header>
@@ -85,9 +75,9 @@ const Course = () => {
                         <h2>Варианты обучения</h2>
                     </div>
                     <div className="plans__cards">
-                        {data?data.levels.map(plan=>
-                                <PlanCard name={plan.name} descriptions={plan.specs} stage={plan.stage} price={plan.price} discount={plan.discount} />
-                            ):''}
+                        {data ? data.levels.map(plan =>
+                            <PlanCard {...plan} />
+                        ) : ''}
                     </div>
                 </div>
             </section>
@@ -270,7 +260,6 @@ const Course = () => {
                     </div>
                 </div>
             </section>
-            <Footer/>
         </div>
     )
 }

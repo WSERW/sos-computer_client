@@ -5,7 +5,7 @@ import logo from '../img/logo.svg'
 const Footer = () => {
     return (
         <footer className="footer">
-            <div className="footer__container">
+            <div className="container">
                 <div className="footer__wrapper">
                     <div className="footer__team">
                         <h2 className="footer__team-title">Команда</h2>

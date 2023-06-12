@@ -1,4 +1,5 @@
-import React, {useEffect,useState} from 'react'
+import React, { useEffect, useState } from 'react'
+import { getCourses, getDemoCourses } from '../api'
 
 import girl from '../img/girl.svg'
 import blop from '../img/blop.svg'
@@ -40,46 +41,24 @@ import sertificate2 from '../img/sertificate2.png'
 import quest from '../img/quest.svg'
 import faqBoy from '../img/faq_boy.svg'
 
-import Navbar from '../components/Navbar'
 import CourseCards from '../components/course/CourseCards'
 import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
 import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
-import Footer from '../components/Footer'
 
-const apiUrl = process.env.REACT_APP_API_URL
 const Index = () => {
     const [data, setData] = useState(null)
     const [demo, setDemo] = useState(null)
 
-    const [url, setUrl] = useState('')
+
     useEffect(() => {
-        getData()
-        getDemo()
+        getCourses()
+        .then(data => setData(data))
+        getDemoCourses()
+        .then(data => setDemo(data))
+    }, []);
 
-    },[]);
-
-    const getData = () => {
-        const url = apiUrl
-        fetch(url,{
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(response => setData(response))
-        .catch(response => console.log(response,url))
-
-    }
-    const getDemo = () => {
-        const url = apiUrl + "demo/"
-        fetch(url,{
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(response => setDemo(response))
-        .catch(response => console.log(response,url))
-
-    }
     return (
         <div>
             <header>
@@ -130,9 +109,9 @@ const Index = () => {
                         <h2>Варианты обучения</h2>
                     </div>
                     <div className="plans__cards">
-                    {demo?demo.map(plan=>
-                            <PlanCard name={plan.name} descriptions={plan.specs} price={plan.levels[0].price} priceOld={plan.levels[0].price*1.1} />
-                        ):''}
+                        {demo ? demo.map(plan =>
+                            <PlanCard {...plan.levels[0]} name={plan.name} />
+                        ) : ''}
                     </div>
                 </div>
             </section>
@@ -338,9 +317,9 @@ const Index = () => {
                     <div className="contacts__wrapper">
                         <form action="" className="contacts__form">
                             <label htmlFor="">Оставьте ваше имя</label>
-                            <input type="text" name="" id="" placeholder='Имя...'/>
+                            <input type="text" name="" id="" placeholder='Имя...' />
                             <label htmlFor="">Номер телефона</label>
-                            <input type="text" name="" id="" placeholder='+380...'/>
+                            <input type="text" name="" id="" placeholder='+380...' />
                             <label htmlFor="">Напишите нам</label>
                             <div className="contacts__comment">
                                 <textarea placeholder='Введите текст...'></textarea>
@@ -388,7 +367,6 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-            <Footer/>
         </div>
     )
 }

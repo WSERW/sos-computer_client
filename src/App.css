@@ -212,7 +212,7 @@ section {
     font-size: 12px;
     font-weight: 700;
     line-height: 26px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 }
 
 
@@ -261,6 +261,14 @@ section {
     font-size: 22px;
 }
 
+.plan__card_discount {
+    color: #CACACA;
+}
+
+.plan__card_price-discount {
+    text-decoration: line-through;
+}
+
 .plan__card_link {
     display: inline-block;
     border-radius: 5px;
@@ -274,7 +282,7 @@ section {
     text-align: center;
 }
 
-.plan__card_stage {
+.plan__card_level {
     position: absolute;
     top: 0;
     right: 0;
@@ -288,6 +296,14 @@ section {
     font-weight: 700;
     line-height: 26px;
     text-transform: capitalize;
+}
+
+.plan__card_level.advanced {
+    background: linear-gradient(244.59deg, #FFE100 -0.06%, #FFB700 48.63%, #FFE100 99.95%);
+}
+
+.plan__card_level.expert {
+    background: linear-gradient(88.83deg, #D90000 0%, #B00000 99.33%), linear-gradient(88.83deg, #00D923 0%, #5F8C00 99.33%);
 }
 
 .modal__content {

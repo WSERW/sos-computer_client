@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
 import Drop from './Drop'
 
 import logo from '../img/logo.svg'
@@ -12,9 +14,9 @@ const Navbar = () => {
     <nav>
         <div className="container">
             <div className="navbar">
-                <a href="#" className="logo">
+                <Link to='/' className="logo">
                     <img src={logo} alt="" />
-                </a>
+                </Link>
                 <div className="navbar__numbers">
                     <a href="tel:+380954624672" className="">+38 (095) - 462 - 46 - 72</a>
                     <a href="tel:+79494056846" className="">+7 (949) - 405 - 68 - 46</a>
@@ -37,7 +39,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <ul className="navbar__nav">
-                    <li className="navbar__item"><a href="#" className="navbar__link">Про академию</a></li>
+                    <li className="navbar__item"><Link to='/' className="navbar__link">Про академию</Link></li>
                     <li className="navbar__item"><Drop/></li>
                     <li className="navbar__item"><a href="#" className="navbar__link">Контакты</a></li>
                 </ul>
