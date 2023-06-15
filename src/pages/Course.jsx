@@ -42,7 +42,8 @@ const Course = () => {
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        setData(getCourse(params.id))
+        getCourse(params.id)
+        .then(data => setData(data))
     }, []);
     return (
         <div>
