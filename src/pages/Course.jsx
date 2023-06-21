@@ -77,7 +77,7 @@ const Course = () => {
                     </div>
                     <div className="plans__cards">
                         {data ? data.levels.map(plan =>
-                            <PlanCard {...plan} />
+                            <PlanCard {...plan}  tag={data.tag} />
                         ) : ''}
                     </div>
                 </div>

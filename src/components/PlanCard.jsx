@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PlanCard = ({ name, level = 'начальный', descriptions = [], link, price, discount, tag }) => {
-    if (!descriptions.length) {
-        descriptions = [{ text: 'описание' }, { text: 'описание' }, { text: 'описание' }]
+const PlanCard = ({ name, level = 'начальный', specs = [], link, price, discount, tag }) => {
+    if (!specs.length) {
+        specs = [{ text: 'описание' }, { text: 'описание' }, { text: 'описание' }]
     }
     let pricePeriod = tag == 'child' ? 'мес':'курс'
     let levelTag = { 'base': 'начальный', 'advanced': 'продвинутый', 'expert': 'под работу' }[level]
@@ -12,8 +12,8 @@ const PlanCard = ({ name, level = 'начальный', descriptions = [], link,
         <div className='plan__card'>
             <h3 className="plan__card_name">{name}</h3>
             <ul className="plan__card_descriptions">
-                {descriptions.map((description) =>
-                    <li className="plan__card_description">{description.text}</li>
+                {specs.map((specs) =>
+                    <li className="plan__card_description">{specs.text}</li>
                 )}
             </ul>
             <p className="plan__price">{priceLabel} {priceDiscountLabel}</p>

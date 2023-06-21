@@ -100,7 +100,7 @@ const CourseCards = ({ courses }) => {
                         <button onClick={() => { setTag('design') }}>Дизайн</button>
                         <button onClick={() => { setTag('dev') }}>Программирование</button>
                         <button onClick={() => { setTag('child') }}>Детские</button>
-                        <button onClick={() => { setTag('office') }}>Офисные</button>
+                        <button onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
                     </div>
                     <div className="ways__nav">
                         {/* <button onClick={useSwiper().slideNext()}><img src={prev} alt="" /></button>

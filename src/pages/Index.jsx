@@ -108,9 +108,14 @@ const Index = () => {
                         </div>
                         <h2>Варианты обучения</h2>
                     </div>
+                    <div className="plans__subheading">
+                        <div className="plans__subheading_left">Курсы стартуют <span>каждый месяц</span></div>
+                        <div className="plans__subheading_right">Мы подберем группу или индивидуального педагога под ваш уровень и направление</div>
+
+                    </div>
                     <div className="plans__cards">
                         {demo ? demo.map(plan =>
-                            <PlanCard {...plan.levels[0]} name={plan.name} />
+                            <PlanCard {...plan.levels[0]} name={plan.name} tag={plan.tag} />
                         ) : ''}
                     </div>
                 </div>

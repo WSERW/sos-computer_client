@@ -215,6 +215,20 @@ section {
     /* text-transform: capitalize; */
 }
 
+.plans .section__heading {
+    margin-bottom: 20px;
+}
+
+.plans__subheading {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.plans__subheading_left span {
+    color: var(--yellow-background);
+}
 
 .plan__card {
     width: 370px;
