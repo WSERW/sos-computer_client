@@ -194,11 +194,8 @@ const Course = () => {
                                 </div>
                                 <h2>О нас</h2>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quod enim deserunt sunt illo animi harum. Ducimus qui quam ex.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis officiis iure perferendis praesentium fuga atque quos, laboriosam necessitatibus libero dolorem temporibus quas quis incidunt qui corporis facilis reiciendis? Voluptas.
-                                Quas quaerat molestiae illo modi dicta fugit earum voluptatem ad enim inventore culpa minima repudiandae esse debitis, fuga adipisci veritatis tempore qui a omnis. Ipsam corporis iusto ducimus ut totam.
-                                Quia cumque blanditiis veritatis saepe veniam, amet accusantium incidunt optio laborum illum distinctio! Quis iusto et dicta accusantium dolorem pariatur laboriosam veniam, sequi fugit aliquid distinctio exercitationem quaerat, cupiditate vitae.
-                            </p>
+                            <p>Мы старейшее образовательное учреждение Донецка в сфере компьютерных технологий. Наша история началась в далёком 1999 году.На данный момент выдано более 5200 дипломов, а лучшие наши выпускники продолжают работу в академии, в качестве преподавателей.Наша цель — преподнести знания, наиболее актуальные для настоящей профессии, без распыления на избыточные материалы.</p>
+                            <p>Демократичные цены и широкая сеть офисов по всей области позволят Вам выбрать оптимальный, для себя, вариант.Для корпоративных клиентов мы предоставляем разработку софта, обучение персонала, а также разработку и поддержку сайтов на сервере компании.</p>
                         </div>
                     </div>
                 </div>
