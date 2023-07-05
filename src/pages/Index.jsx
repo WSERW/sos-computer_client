@@ -14,12 +14,6 @@ import lampSm from '../img/lamp_sm.svg'
 
 
 
-import phone from '../img/phone.svg'
-import screen from '../img/screen.svg'
-import book from '../img/book.svg'
-import palett from '../img/palett.svg'
-import hat from '../img/hat.svg'
-import scroll from '../img/scroll.svg'
 
 
 import freelancer from '../img/freelance.svg'
@@ -38,14 +32,15 @@ import vk from '../img/vk.svg'
 import yt from '../img/yt.svg'
 import sertificate1 from '../img/sertificate1.png'
 import sertificate2 from '../img/sertificate2.png'
-import quest from '../img/quest.svg'
-import faqBoy from '../img/faq_boy.svg'
+
 
 import CourseCards from '../components/course/CourseCards'
 import PlanCard from '../components/PlanCard'
 import ModalEnroll from '../modals/ModalEnroll'
-import FAQCard from '../components/FAQCard'
 import Waves from '../components/Waves'
+import FAQ from '../components/faq/FAQ'
+import How from '../components/how/How'
+
 
 const Index = () => {
     const [data, setData] = useState(null)
@@ -132,42 +127,7 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-            <section className="how">
-                <div className="container">
-                    <div className="section__heading">
-                        <div className="heading__icon">
-                            <img src={penSm} alt="" />
-                        </div>
-                        <h2>Как записаться и учиться</h2>
-                    </div>
-                    <div className="how__cards">
-                        <div className="how__card">
-                            <img src={phone} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                        <div className="how__card">
-                            <img src={screen} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                        <div className="how__card">
-                            <img src={book} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                        <div className="how__card">
-                            <img src={palett} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                        <div className="how__card">
-                            <img src={hat} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                        <div className="how__card">
-                            <img src={scroll} alt="" />
-                            <p>Выбираем направление</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <How/>
             <section className="sertificate">
                 <div className="container">
                     <div className="sertificate__wrapper">
@@ -269,29 +229,7 @@ const Index = () => {
                     </div>
                 </div>
             </section>
-            <section className="faq">
-                <div className="container">
-                    <div className="section__heading">
-                        <div className="heading__icon">
-                            <img src={quest} alt="" />
-                        </div>
-                        <h2>Популярные вопросы</h2>
-                    </div>
-                    <div className="faq__block">
-                        <div className="faq__cards">
-                            <FAQCard title={'Какие у вас есть формы обучения?'} text={'Вы можете выбрать один из наших многочисленных офисов, либо взять своего преподавателя в скайпе или дискорде. Качество образования одинаково в обоих случаях, все темы изучаются до полного усвоения учеником. Практика прорабатывается для получения навыков, необходимых при работе в крупных компаниях.'} />
-                            <FAQCard title={'Сколько длятся курсы?'} text={'Каждый курс имеет разную продолжительность. Курсы для детей занимают 1,3 - 1,5 года. Взрослые направления обычно занимают от 2 до 6 месяцев, со своим преподавателем. Некоторые сложные дисциплины требуют освоения двух курсов, например fullstack программирование.'} />
-                            <FAQCard title={'Как узнать стоимость обучения по каждому курсу?'} text={'Поскольку мы представлены в разных городах, стоимость немного отличается для каждого случая. Пожалуйста, позвоните нам, либо воспользуйтесь удобной социальной сетью, чтобы узнать актуальные цены на любой из наших курсов.'} />
-                            <FAQCard title={'Какие есть варианты и способы оплаты?'} text={'Вы можете оплатить несколькими способами. При посещении любого офиса, вы можете заключить договор обучения на месте и оплатить наличными. Если вы занимаетесь онлайн, вы можете оплатить курс в банке по предоставленным реквизитам. Также вы можете воспользоваться переводом денег на карту ПриватБанка или СберБанка, если другие варианты вам не подходят. Мы пересчитаем стоимость в удобную валюту, если вы живёте за рубежом.'} />
-                            <FAQCard title={'Поомогаете ли вы с трудоустройством?'} text={'У нас есть большая база работодателей, а также часто появляются вакансии от партнёров. Некоторые успешные ученики проходят стажировку у нас и работают в качестве преподавателей в различных городах и онлайн. Если ни один из этих вариантов вам не подойдёт, мы поможем сформировать резюме и портфолио, чтобы достойно представить вас работодателям.'} />
-                        </div>
-                        <div className="faq__img">
-                            <img src={faqBoy} alt="" />
-                        </div>
-                    </div>
-
-                </div>
-            </section>
+            <FAQ/>
             <section className="about">
                 <div className="container">
                     <div className="about__wrapper">
@@ -305,6 +243,7 @@ const Index = () => {
                                 </div>
                                 <h2>О нас</h2>
                             </div>
+                            <blockquote>Работать надо не 12 часов, а головой. — Стив Джобс</blockquote>
                             <p>Мы старейшее образовательное учреждение Донецка в сфере компьютерных технологий. Наша история началась в далёком 1999 году.На данный момент выдано более 5200 дипломов, а лучшие наши выпускники продолжают работу в академии, в качестве преподавателей.Наша цель — преподнести знания, наиболее актуальные для настоящей профессии, без распыления на избыточные материалы.</p>
                             <p>Демократичные цены и широкая сеть офисов по всей области позволят Вам выбрать оптимальный, для себя, вариант.Для корпоративных клиентов мы предоставляем разработку софта, обучение персонала, а также разработку и поддержку сайтов на сервере компании.</p>
                         </div>

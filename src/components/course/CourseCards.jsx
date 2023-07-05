@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper, } from 'swiper/react';
+import { Autoplay, } from "swiper";
 
 import 'swiper/css';
 
@@ -73,6 +74,9 @@ const CourseCards = ({ courses }) => {
             <Swiper
                 slidesPerView={5}
                 // centeredSlides={true}
+                autoplay = {{
+                    delay: 3000,
+                }}
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -93,14 +97,15 @@ const CourseCards = ({ courses }) => {
                 }}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
+                modules={[Autoplay,]}
             >
                 <div slot="container-start" className="ways__buttons">
                     <div className="ways__categories">
-                        <button onClick={() => { setTag('') }}>Все</button>
-                        <button onClick={() => { setTag('design') }}>Дизайн</button>
-                        <button onClick={() => { setTag('dev') }}>Программирование</button>
-                        <button onClick={() => { setTag('child') }}>Детские</button>
-                        <button onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
+                        <button className={tag==''?'active':''} onClick={() => { setTag('') }}>Все</button>
+                        <button className={tag=='design'?'active':''} onClick={() => { setTag('design') }}>Дизайн и 3д</button>
+                        <button className={tag=='dev'?'active':''} onClick={() => { setTag('dev') }}>Программирование</button>
+                        <button className={tag=='child'?'active':''} onClick={() => { setTag('child') }}>Детские</button>
+                        <button className={tag=='office'?'active':''} onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
                     </div>
                     <div className="ways__nav">
                         {/* <button onClick={useSwiper().slideNext()}><img src={prev} alt="" /></button>

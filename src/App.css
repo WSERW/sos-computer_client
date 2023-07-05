@@ -20,7 +20,8 @@
 }
 
 body {
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background: radial-gradient(66.3% 66.3% at 50% 58.22%, #191C2A 0%, #231F3D 100%);
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
 }
@@ -57,7 +58,10 @@ a {
 ul {
     list-style: none;
 }
-
+textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
 input {
     border: 1px solid var(--light-gray);
     /* color: ; */
@@ -65,6 +69,17 @@ input {
     padding: 18px 20px;
     height: 42px;
     box-sizing: border-box;
+}
+textarea:focus,
+input:focus {
+    /* color: var(--gold); */
+    outline: none;
+    border: 1px solid var(--gold) !important;
+}
+textarea:invalid,
+input:invalid {
+    border: 1px solid #D91B1B !important;
+    color: #D91B1B;
 }
 
 button {
@@ -76,15 +91,25 @@ button {
     color: var(--background);
     font-weight: 700;
     background-color: var(--yellow-background);
+    transition: 0.3s;
 }
 
+
 button:hover {
+    box-shadow: 0px 0px 12px 0px rgba(246, 163, 0, 0.50);
+    background: #FFB800;
+}
+
+button:active {
+    background: #F6A300;
+}
+/* button:hover {
     box-shadow: 0px 0px 30px rgba(255, 214, 0, 0.25);
 }
 
 button:active {
     background: #FFB500;
-}
+} */
 
 section {
     padding-bottom: 40px;
@@ -141,6 +166,11 @@ section {
     background: linear-gradient(135deg, #a5589b, #404383);
     border-radius: 10px;
     border-top-right-radius: 0;
+    transition: 0.3s;
+}
+
+.course__card:hover {
+    box-shadow: 0px 0px 30px 0px rgba(147, 72, 137, 1);
 }
 
 .swiper-slide:nth-child(3n+2) .course__card {
@@ -196,6 +226,17 @@ section {
     font-size: 14px;
     text-align: center;
     position: relative;
+    transition: 0.3s;
+}
+
+.course__card_link:hover {
+    color: var(--background);
+    background-color: var(--white);
+}
+
+.course__card_link:active {
+    color: #BA39AB;
+    background-color: var(--white);
 }
 
 .course__card_stage {
@@ -240,6 +281,12 @@ section {
     background: var(--white);
     border-radius: 10px;
     border-top-right-radius: 0;
+    transition: 0.3s;
+}
+
+.plan__card:hover{
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.80);
+    
 }
 
 .plan__card_name {
@@ -294,7 +341,18 @@ section {
     color: var(--dark-blue);
     font-size: 14px;
     text-align: center;
+    transition: 0.3s;
 }
+
+.plan__card_link:hover {
+    box-shadow: 0px 0px 12px 0px rgba(246, 163, 0, 0.50);
+    background: #FFB800;
+}
+
+.plan__card_link:active {
+    background: #F6A300;
+}
+
 
 .plan__card_level {
     position: absolute;
@@ -402,22 +460,59 @@ nav {
     margin-left: 60px;
 }
 
-.navbar__social_item {}
+.navbar__social_item a svg,
+.navbar__social_item a svg path{
+    transition: 0.3s;
+}
+
+.navbar__social_item a:hover svg path{
+    fill: var(--yellow-background);
+}
+
+.navbar__social_item a:hover svg {
+    filter:drop-shadow(0 0 30px rgba(255, 214, 0, 0.85));
+}
+
+.navbar__social_item a:active svg path{
+    fill: var(--gold);
+}
 
 .navbar__nav {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     margin-left: auto;
 }
 
 .navbar__item {}
 
+
 .navbar__link {
+    position: relative;
+    z-index: 1;
     color: var(--white);
     font-size: 15px;
     font-weight: 700;
     text-shadow: 0 0 10px #000;
     text-transform: uppercase;
+}
+
+.navbar__link:before {
+    content: '';
+    background: var(--background);
+    position: absolute;
+    transform: scaleY(0);
+    /* width: 0; */
+    top: -5px;
+    right: -10px;
+    left: -10px;
+    bottom: -5px;
+    z-index: -1;
+    transition: 0.2s;
+    border-radius: 20px;
+}
+
+.navbar__link:hover::before {
+    transform: scaleY(1);
 }
 
 .navbar__toggler {
@@ -482,6 +577,12 @@ nav {
 }
 
 /* ways */
+.ways .section__heading {
+    margin-bottom: 20px;
+}
+.ways  .swiper{
+    padding-top: 20px; 
+}
 .ways__slides {
     display: flex;
     justify-content: space-between;
@@ -503,10 +604,13 @@ nav {
     background-color: var(--text-blue);
     color: var(--white);
     font-weight: 400;
+    transition: 0.3s;
 }
-
+.ways__categories button:hover,
 .ways__categories button.active {
-    background-color: --;
+    background-color: var(--light-blue);
+    box-shadow: none;
+    filter: drop-shadow(0px 0px 6px rgba(133, 136, 200, 0.80));
 }
 
 /* banner */
@@ -594,12 +698,14 @@ nav {
 
 .how {
     padding-bottom: 70px;
+    position: relative;
 }
 
 .how__cards {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .how__card {
@@ -611,6 +717,11 @@ nav {
     box-sizing: border-box;
     border-radius: 10px;
     text-align: center;
+    transition: 0.3s;
+}
+
+.how__card:hover {
+    box-shadow: 0px 0px 20px 1px #ffa
 }
 
 .how__card:nth-child(even) {
@@ -642,21 +753,62 @@ nav {
     border: 6px var(--white) dashed;
     clip-path: polygon(0 0, 45% 0, 45% 45%, 0 45%);
     clip-path: polygon(35% 0, 100% 0, 100% 45%, 45% 45%);
-
+    z-index: -1;
 }
 
 .how__card:nth-child(odd) {
     right: 150px;
 }
 
-.how__card img {
+.how__card .how__card_icon {
     margin-bottom: 6px;
+    height: 40px;
+}
+
+.how__card .how__card_pop {
+    position: absolute;
+    z-index: -1;
+    height: 75px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0;
+    transition: 0.3s;
+}
+
+.how__card:hover .how__card_pop {
+    transform: translate(-50%, -100%);
 }
 
 .how__card p {
     font-size: 20px;
     font-weight: 600;
     text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.how__girl {
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+}
+
+.how__boy {
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+.planet_s {
+    position: absolute;
+    right: calc(50% - 350px);
+    top: 170px;
+    z-index: -1;
+}
+
+.planet_b {
+    position: absolute;
+    right: calc(50% + 200px);
+    bottom: 224px;
+    z-index: -1;
 }
 
 /* sertificate */
@@ -690,7 +842,12 @@ nav {
     width: 343px;
     height: 239px;
     /* outline: 1px solid red; */
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.35)
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.sertificate__item:hover {
+    box-shadow: 0px 0px 20px 1px #ffa
 }
 
 .sertificate__item img {
@@ -715,6 +872,8 @@ nav {
     padding-top: 120px;
 }
 
+
+
 .abilities__card_head {
     position: absolute;
     top: 0;
@@ -726,6 +885,11 @@ nav {
     width: 368px;
     height: 256px;
     border-radius: 20px;
+    transition: 0.3s;
+}
+
+.abilities__card_head:hover{
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.80);
 }
 
 .abilities__card_body {
@@ -840,6 +1004,7 @@ nav {
 .about__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .about__img {
@@ -853,12 +1018,35 @@ nav {
     flex-grow: 1;
     flex-basis: 50%;
 }
+.about__text .section__heading {
+    margin-bottom: 25px;
+}
+.about__text blockquote {
+    color: var(--white);
+    text-align: right;
+    font-style: italic;
+}
+.about__text p, 
+.about__text blockquote{
+    margin-bottom: 20px;
+}
+/* ways */
+
+.waves {
+    padding-bottom: 0;
+    display: flex;
+}
+
+.waves canvas {
+    background: linear-gradient(180deg, #231F3D03 20%, #3d2769, #3d2769);
+}
 
 /* contacts */
 
 .contacts {
     padding-top: 100px;
-    background: radial-gradient(66.3% 66.3% at 50% 58.22%, #191C2A 0%, #231F3D 100%);
+    background-color: var(--background);
+    /* background: radial-gradient(66.3% 66.3% at 50% 58.22%, #191C2A 0%, #231F3D 100%); */
 }
 
 .contacts__wrapper {
@@ -890,6 +1078,8 @@ nav {
     padding: 18px 20px;
     width: 510px;
     margin-bottom: 30px;
+    color:  #B0B0B0;
+    
 }
 
 .contacts__form textarea {
@@ -902,6 +1092,8 @@ nav {
     width: 510px;
     height: 180px;
     resize: none;
+    color:  #B0B0B0;
+    outline: none;
 }
 
 .contacts__comment {
@@ -972,6 +1164,10 @@ nav {
 
 .contacts__phone a {
     color: var(--yellow-background);
+}
+
+.contacts__phone a:hover {
+    color: var(--light-blue);
 }
 
 .contacts__phone a::before {
@@ -1127,6 +1323,9 @@ nav {
 
 /* footer */
 
+footer {
+    background-color: var(--background);
+}
 .footer__wrapper {
     padding-top: 20px;
     display: flex;

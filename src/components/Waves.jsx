@@ -5,7 +5,7 @@ const Waves = () => {
     let [cnvWidth,setCnvWidth] = useState(document.documentElement.offsetWidth);
 
 
-    let cnvHeight = 500
+    let cnvHeight = 200
     let waveHeight = cnvHeight;
     let speed = 1;
     let offset = 15;
@@ -25,14 +25,14 @@ const Waves = () => {
 
         for (let i = 0; i < 55; i++) {
             let wave = {
-                height: cnvHeight - 15 * Math.random() * 7,
+                height: cnvHeight - 5 * Math.random() * 7,
                 move: speed * Math.random(),
             }
             waves.push(wave)
         }
         for (let i = 0; i < 55; i++) {
             let wave = {
-                height: cnvHeight - 15 * Math.random() * 5,
+                height: cnvHeight - 5 * Math.random() * 5,
                 move: speed * Math.random(),
             }
             waves2.push(wave)
@@ -66,7 +66,7 @@ const Waves = () => {
         function render() {
             for (let i = 0; i < waves.length; i++) {
                 waves[i].height -= waves[i].move
-                if (waves[i].height <= cnvHeight * 0.7) {
+                if (waves[i].height <= cnvHeight * 0.2) {
                     waves[i].move = -speed * Math.random()
                 } else if (waves[i].height >= cnvHeight * 0.9) {
                     waves[i].move = speed * Math.random()
@@ -74,7 +74,7 @@ const Waves = () => {
             }
             for (let i = 0; i < waves2.length; i++) {
                 waves2[i].height -= waves2[i].move
-                if (waves2[i].height <= cnvHeight * 0.85) {
+                if (waves2[i].height <= cnvHeight * 0.5) {
                     waves2[i].move = -speed * Math.random()
                 } else if (waves2[i].height >= cnvHeight) {
                     waves2[i].move = speed * Math.random()

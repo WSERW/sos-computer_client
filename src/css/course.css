@@ -13,16 +13,16 @@
 
 .program__card_title {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
     box-sizing: border-box;
-    font-size: 22px;
+    font-size: 18px;
     color: var(--background);
 }
 
 .program__card_label {
-    padding-top: 5px;
-    font-size: 12px;
+    /* padding-top: 5px; */
+    font-size: 14px;
     height: 20px;
     width: 75px;
     line-height: 20px;
@@ -33,6 +33,7 @@
     display: inline-block;
     height: 20px;
     min-width: 20px;
+    font-size: 12px;
     background-color: var(--yellow-background);
     text-align: center;
 }
@@ -43,8 +44,8 @@
 
 .program__card_title .program__card_btn {
     position: absolute;
-    top: -15px;
-    right: 20px;
+    top: -17px;
+    right: 15px;
     font-size: 40px;
     font-weight: 300;
 }
