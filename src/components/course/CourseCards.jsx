@@ -9,62 +9,8 @@ import CourseCard from './CourseCard'
 import next from '../../img/next.svg'
 import prev from '../../img/prev.svg'
 
-const data = [
-    {
-        tag: 'design',
-        name: 'Веб-дизайн1',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'design',
-        name: 'Веб-дизайн2',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'design',
-        name: 'Веб-дизайн3',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'design',
-        name: 'Веб-дизайн4',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'design',
-        name: 'Веб-дизайн5',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'dev',
-        name: 'Программирование1',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'dev',
-        name: 'Программирование2',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'dev',
-        name: 'Программирование3',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'dev',
-        name: 'Программирование4',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-    {
-        tag: 'dev',
-        name: 'Программирование5',
-        descriptions: ['Свой преподаватель', '2 - 3 раза в неделю', '2 - 4.5 месяца'],
-    },
-]
-
 const CourseCards = ({ courses }) => {
     // let [courses, setCourses] = useState(data)
-    console.log(courses)
     let [tag, setTag] = useState('')
     let filtredCourses = courses ? courses.filter((course) => course.tag.includes(tag)) : []
 
@@ -95,8 +41,6 @@ const CourseCards = ({ courses }) => {
                         slidesPerView: 5
                     }
                 }}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
                 modules={[Autoplay,]}
             >
                 <div slot="container-start" className="ways__buttons">
@@ -114,10 +58,10 @@ const CourseCards = ({ courses }) => {
                 </div>
                 <div className="ways__slides--">
 
-                    {filtredCourses.map((course, id) =>
-                        <SwiperSlide>
+                    {filtredCourses.map((course) =>
+                        <SwiperSlide key={course.id}>
                             <div className="ways__slide">
-                                <CourseCard {...course} key={id} />
+                                <CourseCard {...course}  />
                             </div>
                         </SwiperSlide>
                     )}

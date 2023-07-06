@@ -1,0 +1,8 @@
+.waves {
+    padding-bottom: 0;
+    display: flex;
+}
+
+.waves canvas {
+    background: linear-gradient(180deg, #231F3D03 20%, #3d2769, #3d2769);
+}

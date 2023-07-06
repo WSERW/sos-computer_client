@@ -6,8 +6,8 @@ const CourseCard = ({ name, id, specs = [], tag}) => {
         <div className='course__card'>
             <h3 className="course__card_name">{name}</h3>
             <ul className="course__card_descriptions">
-                {specs.map((spec) =>
-                    <li className="course__card_description">{spec.text}</li>
+                {specs.map((spec, id) =>
+                    <li className="course__card_description" key={id}>{spec.text}</li>
                 )}
             </ul>
             <Link to={`course/${id}`} className="course__card_link">Смотреть программу</Link>

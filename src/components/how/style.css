@@ -1,0 +1,114 @@
+
+.how {
+    padding-bottom: 70px;
+    position: relative;
+}
+
+.how__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.how__card {
+    position: relative;
+    background: var(--gold-gradient);
+    width: 245px;
+    height: 160px;
+    padding: 28px 30px 18px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.how__card:hover {
+    box-shadow: 0px 0px 20px 1px #ffa
+}
+
+.how__card:nth-child(even) {
+    left: 150px;
+}
+
+.how__card:nth-child(even):not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: -50%;
+    top: 50%;
+    display: block;
+    width: 245px;
+    height: 160px;
+    border-radius: 20px;
+    border: 6px var(--white) dashed;
+    clip-path: polygon(0 0, 45% 0, 45% 45%, 0 45%);
+}
+
+.how__card:nth-child(odd)::after {
+    content: '';
+    position: absolute;
+    right: -70%;
+    top: 50%;
+    display: block;
+    width: 245px;
+    height: 160px;
+    border-radius: 20px;
+    border: 6px var(--white) dashed;
+    clip-path: polygon(0 0, 45% 0, 45% 45%, 0 45%);
+    clip-path: polygon(35% 0, 100% 0, 100% 45%, 45% 45%);
+    z-index: -1;
+}
+
+.how__card:nth-child(odd) {
+    right: 150px;
+}
+
+.how__card .how__card_icon {
+    margin-bottom: 6px;
+    height: 40px;
+}
+
+.how__card .how__card_pop {
+    position: absolute;
+    z-index: -1;
+    height: 75px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 0;
+    transition: 0.3s;
+}
+
+.how__card:hover .how__card_pop {
+    transform: translate(-50%, -100%);
+}
+
+.how__card p {
+    font-size: 20px;
+    font-weight: 600;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.how__girl {
+    position: absolute;
+    right: 0;
+    bottom: 100px;
+}
+
+.how__boy {
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+.planet_s {
+    position: absolute;
+    right: calc(50% - 350px);
+    top: 170px;
+    z-index: -1;
+}
+
+.planet_b {
+    position: absolute;
+    right: calc(50% + 200px);
+    bottom: 224px;
+    z-index: -1;
+}

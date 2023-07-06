@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './style.css'
+
 import penSm from '../../img/pen_sm.svg'
 
 import phone from '../../img/phone.svg'

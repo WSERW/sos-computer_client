@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 
+import './style.css'
+
 const Waves = () => {
     let canvas = useRef()
-    let [cnvWidth,setCnvWidth] = useState(document.documentElement.offsetWidth);
+    let [cnvWidth, setCnvWidth] = useState(document.documentElement.offsetWidth);
 
 
     let cnvHeight = 200
@@ -13,7 +15,6 @@ const Waves = () => {
     let waves2 = [];
 
     window.addEventListener('resize', function () {
-        console.log('resize')
         setCnvWidth(document.documentElement.offsetWidth);
     })
 
@@ -21,7 +22,7 @@ const Waves = () => {
         let ctx = canvas.current.getContext('2d')
         let requestId;
 
-// animation
+        // animation
 
         for (let i = 0; i < 55; i++) {
             let wave = {
@@ -58,11 +59,11 @@ const Waves = () => {
                 ctx.fill();
             }
         }
-        
+
         function clear() {
             ctx.clearRect(0, 0, cnvWidth, cnvHeight)
         }
-        
+
         function render() {
             for (let i = 0; i < waves.length; i++) {
                 waves[i].height -= waves[i].move
@@ -81,14 +82,14 @@ const Waves = () => {
                 }
             }
         }
-        
+
         function animation() {
             requestId = requestAnimationFrame(animation);
             clear();
             draw();
             render();
         }
-// animation
+        // animation
 
         animation()
 
@@ -98,7 +99,9 @@ const Waves = () => {
     })
 
     return (
-        <canvas ref={canvas} width={cnvWidth} height={cnvHeight} />
+        <section className='waves'>
+            <canvas ref={canvas} width={cnvWidth} height={cnvHeight} />
+        </section>
     )
 
 }

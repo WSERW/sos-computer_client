@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, createRoutesFromElements, Route, RouteProvider,RouterProvider } from 'react-router-dom'
-import App from './App';
 import RootLayout from './layouts/RootLayout';
 import Course from './pages/Course';
 import Index from './pages/Index';
+
+import './App.css';
 
 import reportWebVitals from './reportWebVitals';
 

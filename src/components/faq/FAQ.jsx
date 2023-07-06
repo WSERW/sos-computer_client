@@ -1,6 +1,8 @@
 import React from 'react'
 import FAQCard from './FAQCard'
 
+import './style.css'
+
 import quest from '../../img/quest.svg'
 import faqBoy from '../../img/faq_boy.svg'
 

@@ -1,0 +1,140 @@
+.contacts {
+    padding-top: 100px;
+    background-color: var(--background);
+    /* background: radial-gradient(66.3% 66.3% at 50% 58.22%, #191C2A 0%, #231F3D 100%); */
+}
+
+.contacts__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contacts__form {
+    margin-top: 45px;
+    box-sizing: border-box;
+    /* padding-right: 200px; */
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts__form label {
+    font-size: 16px;
+    color: var(--yellow-background);
+    margin-left: 15px;
+    /* margin-bottom: 10px; */
+}
+
+.contacts__form input:not([type="checkbox"]) {
+    display: block;
+    border: 1px solid var(--gray);
+    background: transparent;
+    border-radius: 5px;
+    padding: 18px 20px;
+    width: 510px;
+    margin-bottom: 30px;
+    color: #B0B0B0;
+}
+
+.contacts__form textarea {
+    display: block;
+    border: 1px solid var(--gray);
+    background: transparent;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 18px 20px;
+    width: 510px;
+    height: 180px;
+    resize: none;
+    color: #B0B0B0;
+    outline: none;
+}
+
+.contacts__comment {
+    position: relative;
+    margin-bottom: 30px;
+    width: 510px;
+}
+
+.contacts__comment button {
+    position: absolute;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    bottom: 0;
+    right: 0;
+    width: 47px;
+    height: 47px;
+}
+
+.contacts__copyright {
+    display: flex;
+    align-items: center;
+}
+
+.contacts__info {
+    flex-basis: 50%;
+    padding-left: 95px;
+}
+
+.contacts__info .section__heading {
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.contacts__info .section__heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    display: block;
+    width: 80%;
+    height: 1px;
+    background-color: var(--white);
+}
+
+.contacts__description {
+    margin-bottom: 25px;
+}
+
+.contacts__info h3 {
+    font-size: 16px;
+    color: var(--yellow-background);
+    margin-bottom: 25px;
+}
+
+.contacts__info ul {
+    margin-bottom: 25px;
+}
+
+.contacts__info ul li {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.contacts__phone img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.contacts__phone a {
+    color: var(--yellow-background);
+}
+
+.contacts__phone a:hover {
+    color: var(--light-blue);
+}
+
+.contacts__phone a::before {
+    content: '|';
+    margin: 0 10px;
+
+}
+
+.contacts__links {
+    display: flex;
+    gap: 10px;
+}
+
+.contacts__info button {
+    width: 270px;
+}

@@ -1,0 +1,48 @@
+footer {
+    background-color: var(--background);
+}
+
+.footer__wrapper {
+    padding-top: 20px;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid #756684;
+    /* justify-content: space-between; */
+}
+
+.footer__wrapper .footer__team {
+    margin-right: auto;
+}
+
+.footer__team-title {
+    color: var(--yellow-background);
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.footer__team-logo {
+    color: var(--yellow-background);
+    margin-bottom: 18px;
+}
+
+.footer__services-title,
+.footer__schedule-title {
+    color: var(--yellow-background);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.footer__services-item,
+.footer__schedule-item {
+    color: #3D73E2;
+    font-size: 16px;
+}
+
+.footer__services-list {
+    margin-right: 40px;
+}
+
+.footer__services-list li,
+.footer__schedule-list li {
+    margin-bottom: 10px;
+}
