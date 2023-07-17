@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import './style.css'
@@ -8,8 +8,17 @@ import { ReactComponent as Inst } from '../../img/inst.svg'
 import vk from '../../img/vk.svg'
 import yt from '../../img/yt.svg'
 import burger from '../../img/burger.svg'
+import PopUp from '../popup/PopUp';
 
 const Navbar = () => {
+    const [isPopup, setIsPopup] = useState(false);
+    const showPopup = () => {
+        setIsPopup(true)
+    }
+
+    const closePopup = () => {
+        setIsPopup(false)
+    }
     return (
         <nav>
             <div className="container">
@@ -40,7 +49,7 @@ const Navbar = () => {
                     </div>
                     <ul className="navbar__nav">
                         <li className="navbar__item"><Link to='/' className="navbar__link">Про академию</Link></li>
-                        <li className="navbar__item"><Link to='/' className="navbar__link">Курсы</Link></li>
+                        <li className="navbar__item"><button className="navbar__link" onClick={showPopup} >Курсы</button></li>
                         <li className="navbar__item"><a href="#" className="navbar__link">Контакты</a></li>
                     </ul>
                     <button className='navbar__toggler'>
@@ -48,6 +57,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
+            <PopUp isPopup={isPopup} closePopup={closePopup} />
         </nav>
     )
 }

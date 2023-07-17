@@ -93,3 +93,10 @@ nav {
 .navbar__toggler {
     display: none;
 }
+
+
+button.navbar__link {
+    padding: 0;
+    display: inline-block;
+    background-color: transparent;
+}

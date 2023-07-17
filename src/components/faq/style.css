@@ -50,14 +50,25 @@
     right: 20px;
     font-size: 40px;
     font-weight: 300;
+    transition: 0.5s;
 }
 
 .faq__card_description {
     padding: 0 20px 20px;
+    opacity: 0;
+    transition: 0.7s;
     /* display: none; */
 }
 
 .faq__card.active .faq__card_body {
     display: block;
-    max-height: 300px;
+    max-height: 150px;
+}
+
+.faq__card.active .faq__card_title span {
+    transform: rotate(45deg);
+}
+
+.faq__card.active .faq__card_description {
+    opacity: 1;
 }

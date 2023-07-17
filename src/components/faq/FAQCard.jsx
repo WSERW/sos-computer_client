@@ -4,7 +4,7 @@ const FAQCard = ({ title, text }) => {
     let [active, setActive] = useState('')
     return (
         <div className={`faq__card ${active}`}>
-            <h3 className="faq__card_title" onClick={()=> setActive(active?'':'active')}>- {title} <span>{active?'-':'+'}</span></h3>
+            <h3 className="faq__card_title" onClick={()=> setActive(active?'':'active')}>- {title} <span>+</span></h3>
             <div className='faq__card_body'>
                 <div className='faq__card_description'>{text}</div>
             </div>

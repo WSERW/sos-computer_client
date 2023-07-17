@@ -58,10 +58,12 @@ a {
 ul {
     list-style: none;
 }
+
 textarea {
     font-family: 'Nunito', sans-serif;
     font-size: 16px;
 }
+
 input {
     border: 1px solid var(--light-gray);
     /* color: ; */
@@ -70,12 +72,14 @@ input {
     height: 42px;
     box-sizing: border-box;
 }
+
 textarea:focus,
 input:focus {
     /* color: var(--gold); */
     outline: none;
     border: 1px solid var(--gold) !important;
 }
+
 textarea:invalid,
 input:invalid {
     border: 1px solid #D91B1B !important;
@@ -89,7 +93,7 @@ button {
     padding: 14px 12px;
     box-sizing: border-box;
     color: var(--background);
-    font-weight: 700;
+    /* font-weight: 700; */
     background-color: var(--yellow-background);
     transition: 0.3s;
 }
@@ -106,6 +110,13 @@ button:active {
 
 section {
     padding-bottom: 40px;
+}
+
+.global_wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .container {
@@ -149,6 +160,36 @@ section {
     max-height: 100px;
 }
 
+.modal__wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #000000aa;
+    z-index: 100;
+}
+
+.modal--success .modal__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 355px;
+    text-align: center;
+}
+
+.modal--success button {
+    width: 100%;
+}
+
+.modal--success ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
 .modal__content {
     background-color: var(--white);
     border-radius: 15px;
@@ -157,9 +198,15 @@ section {
 }
 
 .modal__content h2 {
+    color: var(--background);
     font-size: 28px;
     font-weight: 900;
+    margin-bottom: 15px;
+}
 
+.modal__content p {
+    color: var(--background);
+    margin-bottom: 25px;
 }
 
 .modal__enroll {
@@ -249,6 +296,32 @@ section {
     right: -370px;
     top: -85px;
     z-index: -1;
+}
+
+.not_found {
+    text-align: center;
+    /* height: 100vh; */
+}
+
+.not_found__banner {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.not_found__link {
+    margin-top: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    width: 270px;
+    height: 44px;
+    background-color: var(--yellow-background);
+    box-sizing: border-box;
+    padding: 12px 0;
+    color: var(--dark-blue);
+    font-size: 14px;
+    text-align: center;
+    transition: 0.3s;
 }
 
 @media screen and (max-width: 425px) {

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { getCourses, getDemoCourses } from '../api'
+import React, { useContext } from 'react'
+
+import { DataContext } from "../contexts/DataContext";
 
 import girl from '../img/girl.svg'
 import blop from '../img/blop.svg'
@@ -19,16 +20,7 @@ import Course from '../components/course/Course'
 
 
 const Index = () => {
-    const [data, setData] = useState(null)
-    const [demo, setDemo] = useState(null)
-
-
-    useEffect(() => {
-        getCourses()
-            .then(data => setData(data))
-        getDemoCourses()
-            .then(data => setDemo(data))
-    }, []);
+    const { courses, demo } = useContext(DataContext);
 
     return (
         <div>
@@ -52,9 +44,9 @@ const Index = () => {
                     </div>
                 </div>
             </header>
-            <Course courses={data} />
+            <Course courses={courses} />
             <Banner />
-            <Plan plans={demo ? demo.map(course => Object.assign(course.levels[0],{ tag: course.tag, name: course.name })) : null} />
+            <Plan plans={demo ? demo.map(course => Object.assign(course.levels[0], { tag: course.tag, name: course.name })) : null} />
             <For />
             <How />
             <Sertificate />

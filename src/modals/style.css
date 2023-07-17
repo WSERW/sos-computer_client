@@ -1,0 +1,12 @@
+.modal__wrapper {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #000000aa;
+}
+
+.modal--success .modal__content{
+    width: 355px;
+}

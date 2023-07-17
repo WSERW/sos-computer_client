@@ -33,7 +33,7 @@
 }
 
 .plan__card:hover{
-    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.80);
+    box-shadow: 0px 0px 25px 0px rgba(255, 255, 255, 0.5);
 }
 
 .plan__card_name {
@@ -71,6 +71,7 @@
 
 .plan__card_discount {
     color: #CACACA;
+    margin-left: 15       px;
 }
 
 .plan__card_price-discount {

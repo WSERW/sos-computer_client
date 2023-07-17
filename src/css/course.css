@@ -54,18 +54,21 @@
     overflow: hidden;
     max-height: 0;
     transition: 0.5s;
+    display: flex;
+    padding-left: 75px;
 }
+
 .program__card.active .program__card_body {
     max-height: 300px;
 }
 
 .program__card_paragraphs {
     padding-top: 20px;
-    padding-left: 75px;
-    -moz-column-count: 2; /* Firefox */
-    -webkit-column-count: 2; /* Safari and Chrome */
-    column-count: 2;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 50%;
 }
+
 
 .program__card_paragraph {
     margin-bottom: 5px;

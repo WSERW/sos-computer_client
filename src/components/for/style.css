@@ -16,8 +16,8 @@
     left: 50%;
     transform: translate(-50%);
     color: var(--white);
-    font-weight: normal;
-    background-color: var(--background);
+    /* font-weight: normal; */
+    background-color: #1E1E33;
     padding: 0 60px;
 }
 
