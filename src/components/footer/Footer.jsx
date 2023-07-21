@@ -3,6 +3,7 @@ import React from 'react'
 import './style.css'
 
 import logo from '../../img/logo.svg'
+import Logo from '../Logo'
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                 <div className="footer__wrapper">
                     <div className="footer__team">
                         <h2 className="footer__team-title">Команда</h2>
-                        <img className="footer__team-logo" src={logo} alt="" />
+                        <Logo/>
                         <p className="footer__team-year">1999-{new Date().getFullYear()}</p>
                     </div>
                     <div className="footer__services">

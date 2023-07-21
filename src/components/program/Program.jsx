@@ -3,6 +3,7 @@ import React from 'react'
 import ProgramCard from './ProgramCard'
 
 import scroll from '../../img/scroll_sm.svg'
+import ProgrammCardSkeleton from './ProgrammCardSkeleton'
 const Program = ({themes}) => {
     return (
         <section className='program'>
@@ -16,7 +17,9 @@ const Program = ({themes}) => {
                 <div className="program__cards">
                     {themes ? themes.map(theme =>
                         <ProgramCard number={theme.order} title={theme.name} paragraphs={theme.paragraphs} />
-                    ) : ''}
+                    ) : [0,0,0,0,0,0,0,0].map(()=>
+                        <ProgrammCardSkeleton />
+                    )}
                 </div>
             </div>
         </section>

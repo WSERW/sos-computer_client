@@ -11,7 +11,7 @@ import yt from '../../img/yt.svg'
 
 const Contacts = () => {
     return (
-        <section className="contacts">
+        <section className="contacts" id='contacts'>
             <div className="container">
                 <div className="contacts__wrapper">
                     <form action="" className="contacts__form">

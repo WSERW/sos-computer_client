@@ -1,9 +1,17 @@
 import React, { useContext } from 'react'
+import { MouseParallax } from 'react-just-parallax';
 
 import { DataContext } from "../contexts/DataContext";
 
 import girl from '../img/girl.svg'
 import blop from '../img/blop.svg'
+import blop2 from '../img/blop_2.svg'
+import cross from '../img/cross.svg'
+import circle from '../img/circle.svg'
+import circleBig from '../img/circle_big.svg'
+import circleBlop from '../img/circle_blop.svg'
+
+
 
 import Waves from '../components/waves/Waves'
 import FAQ from '../components/faq/FAQ'
@@ -38,9 +46,44 @@ const Index = () => {
                             <button>Заказать звонок</button>
                         </div>
                         <div className="header__img">
-                            <img src={girl} alt="girl" />
+                            <div className="blop-wrapper">
+                                <MouseParallax enableOnTouchDevice strength={0.03}>
+                                    <img className='blop' id='blop2' src={blop2} alt="blop" />
+                                </MouseParallax>
+                            </div>
+
+                            <MouseParallax enableOnTouchDevice strength={0.01}>
+                                <img src={girl} alt="girl" />
+                            </MouseParallax>
+
+                            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.04}>
+                                <img className='circle' src={circle} alt="circle" />
+                            </MouseParallax>
+
+                            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.05}>
+                                <img className='cross' id='cross1' src={cross} alt="cross" />
+                                <img className='cross' id='cross3' src={cross} alt="cross" />
+                            </MouseParallax>
+
+                            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.06}>
+                                <img className='cross' id='cross2' src={cross} alt="cross" />
+                                <img className='cross' id='cross5' src={cross} alt="cross" />
+                            </MouseParallax>
+
+                            <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.07}>
+                                <img className='cross' id='cross4' src={cross} alt="cross" />
+                                <img className='cross' id='cross6' src={cross} alt="cross" />
+                            </MouseParallax>
+
                         </div>
                         <img className="header__blop" src={blop} alt="blop" />
+                        <img className="header__circle-blop" src={circleBlop} alt="circle" />
+                        <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.07} zIndex={-1}>
+                            <img className="header__circle" src={circleBig} alt="circle" />
+                        </MouseParallax>
+                        <MouseParallax enableOnTouchDevice isAbsolutelyPositioned strength={0.04}>
+                            <img className='circle-left' src={circle} alt="circle" />
+                        </MouseParallax>
                     </div>
                 </div>
             </header>

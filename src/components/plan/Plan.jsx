@@ -3,11 +3,12 @@ import React from 'react'
 import './style.css'
 
 import PlanCard from './PlanCard'
+import PlanCardSkeleton from './PlanCardSkeleton';
 
 import bookSm from '../../img/book_sm.svg'
 
 
-const Plan = ({plans}) => {
+const Plan = ({ plans }) => {
     return (
         <section className="plans">
             <div className="container">
@@ -23,10 +24,11 @@ const Plan = ({plans}) => {
 
                 </div>
                 <div className="plans__cards">
-                    {console.log(plans)}
-                    {plans ? plans.map((plan,id) =>
-                        <PlanCard {...plan} key={id}/>
-                    ) : ''}
+                    {plans ? plans.map((plan, id) =>
+                        <PlanCard {...plan} key={id} />
+                    ) : [0, 0, 0].map((plan, id) =>
+                        <PlanCardSkeleton/>
+                    )}
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ import { Autoplay, } from "swiper";
 import 'swiper/css';
 
 import CourseCard from './CourseCard'
+import CourseCardSkeleton from './CourseCardSkeleton';
 
 import next from '../../img/next.svg'
 import prev from '../../img/prev.svg'
@@ -13,6 +14,7 @@ const CourseCards = ({ courses }) => {
     // let [courses, setCourses] = useState(data)
     let [tag, setTag] = useState('')
     let filtredCourses = courses ? courses.filter((course) => course.tag.includes(tag)) : []
+    // let filtredCourses = []
 
 
     return (
@@ -20,7 +22,7 @@ const CourseCards = ({ courses }) => {
             <Swiper
                 slidesPerView={5}
                 // centeredSlides={true}
-                autoplay = {{
+                autoplay={{
                     delay: 3000,
                 }}
                 breakpoints={{
@@ -45,11 +47,11 @@ const CourseCards = ({ courses }) => {
             >
                 <div slot="container-start" className="ways__buttons">
                     <div className="ways__categories">
-                        <button className={tag==''?'active':''} onClick={() => { setTag('') }}>Все</button>
-                        <button className={tag=='design'?'active':''} onClick={() => { setTag('design') }}>Дизайн и 3д</button>
-                        <button className={tag=='dev'?'active':''} onClick={() => { setTag('dev') }}>Программирование</button>
-                        <button className={tag=='child'?'active':''} onClick={() => { setTag('child') }}>Детские</button>
-                        <button className={tag=='office'?'active':''} onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
+                        <button className={tag == '' ? 'active' : ''} onClick={() => { setTag('') }}>Все</button>
+                        <button className={tag == 'design' ? 'active' : ''} onClick={() => { setTag('design') }}>Дизайн и 3д</button>
+                        <button className={tag == 'dev' ? 'active' : ''} onClick={() => { setTag('dev') }}>Программирование</button>
+                        <button className={tag == 'child' ? 'active' : ''} onClick={() => { setTag('child') }}>Детские</button>
+                        <button className={tag == 'office' ? 'active' : ''} onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
                     </div>
                     <div className="ways__nav">
                         {/* <button onClick={useSwiper().slideNext()}><img src={prev} alt="" /></button>
@@ -58,13 +60,19 @@ const CourseCards = ({ courses }) => {
                 </div>
                 <div className="ways__slides--">
 
-                    {filtredCourses.map((course) =>
+                    {filtredCourses.length ? filtredCourses.map((course) =>
                         <SwiperSlide key={course.id}>
                             <div className="ways__slide">
-                                <CourseCard {...course}  />
+                                <CourseCard {...course} />
                             </div>
                         </SwiperSlide>
-                    )}
+                    ) : [0, 0, 0, 0, 0, 0].map(() =>
+                        <SwiperSlide>
+                            <div className="ways__slide">
+                                <CourseCardSkeleton />
+                            </div>
+                        </SwiperSlide>)
+                    }
 
                 </div>
             </Swiper>

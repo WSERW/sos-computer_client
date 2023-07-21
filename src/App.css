@@ -19,6 +19,10 @@
     --gold-gradient: linear-gradient(244.59deg, #FFE100 -0.06%, #FFB700 48.63%, #FFE100 99.95%);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     /* background-color: var(--background); */
     background: radial-gradient(66.3% 66.3% at 50% 58.22%, #191C2A 0%, #231F3D 100%);
@@ -251,6 +255,8 @@ section {
 
 .header__text {
     flex-basis: 60%;
+    position: relative;
+    z-index: 2;
 }
 
 .header__text h1 {
@@ -297,6 +303,90 @@ section {
     top: -85px;
     z-index: -1;
 }
+
+.cross {
+    position: absolute;
+}
+
+#cross1 {
+    top: -50px;
+    right: 450px;
+    transform: scale(0.5);
+}
+
+#cross2 {
+    top: 50px;
+    right: 300px;
+}
+
+#cross3 {
+    top: 80px;
+    right: 150px;
+    transform: scale(0.8);
+}
+
+#cross4 {
+    top: 250px;
+    right: 400px;
+    transform: scale(0.6);
+}
+
+#cross5 {
+    bottom: 200px;
+    right: 250px;
+    transform: rotate(45deg);
+}
+
+#cross6 {
+    bottom: 100px;
+    right: 450px;
+    transform: rotate(45deg);
+}
+
+.blop-wrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    top: 0;
+    z-index: -1;
+    /* background-color: #fff; */
+}
+
+.blop {
+    position: absolute;
+}
+
+#blop2 {
+    bottom: -115px;
+    right: 350px;
+}
+
+.circle {
+    position: absolute;
+    top: 10px;
+    right: 400px;
+}
+.circle-left {
+    position: absolute;
+    top: 250px;
+    left: -150px;
+}
+.header__circle {
+    position: absolute;
+    top: -150px;
+    right: -350px;
+}
+
+.header__circle-blop {
+    position: absolute;
+    right: -390px;
+    bottom: 45px;
+    width: 300px;
+}
+
+/* not found */
 
 .not_found {
     text-align: center;
