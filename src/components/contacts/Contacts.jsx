@@ -37,12 +37,14 @@ const Contacts = () => {
                             <h2>Контакты</h2>
                         </div>
                         <p className='contacts__description'>Свяжитесь с нами удобным способом или закажите звонок от нашего менеджера:</p>
-                        <h3>Телефоны:</h3>
-                        <ul className="contacts__phones">
-                            <li className="contacts__phone"><img src={phoneSm} alt="" /> +38(095) - 462 - 46 - 72 <a href="viber://add?number=380954624672">Viber</a> <a href="https://api.whatsapp.com/send?phone=380954624672">Whatsapp</a> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
-                            <li className="contacts__phone"><img src={phoneSm} alt="" /> +7(949) - 405 - 68 - 46<a href="https://t.me/SosComputerAcademy">Telegram</a></li>
-                            <li className="contacts__phone"><img src={phoneSm} alt="" /> +7(977) - 012 - 01 - 36<a href="https://t.me/SosComputerAcademy">Telegram</a></li>
-                        </ul>
+                        <div className="contacts__phones_wrapper">
+                            <h3>Телефоны:</h3>
+                            <ul className="contacts__phones">
+                                <li className="contacts__phone"><img src={phoneSm} alt="" /> <span>+38(095) - 462 - 46 - 72</span> <a href="viber://add?number=380954624672">Viber</a> <a href="https://api.whatsapp.com/send?phone=380954624672">Whatsapp</a> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7(949) - 405 - 68 - 46</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7(977) - 012 - 01 - 36</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                            </ul>
+                        </div>
                         <h3>Почта:</h3>
                         <ul className="contacts__mails">
                             <li className="contacts__mail">sosca172@gmail.com</li>

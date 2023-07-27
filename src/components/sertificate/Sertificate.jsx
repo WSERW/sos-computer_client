@@ -7,6 +7,7 @@ import ModalEnroll from '../../modals/ModalEnroll'
 import penSm from '../../img/pen_sm.svg'
 import sertificate1 from '../../img/sertificate1.png'
 import sertificate2 from '../../img/sertificate2.png'
+import hat from '../../img/hat.png'
 
 
 const Sertificate = () => {
@@ -29,6 +30,9 @@ const Sertificate = () => {
                             <div className="sertificate__item">
                                 <img src={sertificate2} alt="" />
                             </div>
+                        </div>
+                        <div className="sertificate__item_mob">
+                            <img src={hat} alt="" />
                         </div>
                     </div>
                     <div className="sertificate__form">

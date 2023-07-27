@@ -71,11 +71,13 @@
 
 .plan__card_discount {
     color: #CACACA;
-    margin-left: 15       px;
+    margin-left: 15px;
+    font-size: 10px;
 }
 
 .plan__card_price-discount {
     text-decoration: line-through;
+    font-size: 16px !important;
 }
 
 .plan__card_link {

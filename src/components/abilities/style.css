@@ -69,3 +69,50 @@
 .abilities__card_money {
     display: flex;
 }
+
+
+
+@media screen and (max-width: 425px) {
+    .abilities .section__heading {
+        margin-bottom: 20px;
+    }
+
+    .abilities__cards {
+        flex-direction: column;
+    }
+
+    .abilities__card {
+        padding-top: 80px;
+    }
+
+    .abilities__card_head {
+        width: 255px;
+        height: 175px;
+        top: 15px;
+        right: 15px;
+        border-radius: 14px;
+    }
+
+    .abilities__card_head img {
+        height: 130px;
+    }
+
+    .abilities__card_body {
+        width: 255px;
+        height: 295px;
+        padding-top: 120px;
+        border-radius: 14px;
+    }
+
+    .abilities__card p {
+        font-size: 12px;
+    }
+
+    .abilities__card_spec {
+        transform: scale(0.8);
+        transform-origin: 0;
+    }
+
+
+
+}

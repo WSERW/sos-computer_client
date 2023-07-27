@@ -42,7 +42,7 @@
     height: 80px;
     line-height: 80px;
     padding: 0 20px;
-    color: var(--text-blue);
+    color: var(--background);
 }
 
 .faq__card_title span {

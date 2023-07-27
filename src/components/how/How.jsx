@@ -59,6 +59,27 @@ const How = () => {
                         <p>Ищем вакансии среди партнеров</p>
                         <img className='how__card_pop' src={howto_boy_pop} alt="" />
                     </div>
+                    <div className="how__card_mob">
+                        <span>1</span>
+                        <div className="how__card_description">
+                            <h3>Выбор направления</h3>
+                            <p>Выбираем форму обучения, знакомимся с преподавателем и устанавливаем все необходимые программы</p>
+                        </div>
+                    </div>
+                    <div className="how__card_mob">
+                        <span>2</span>
+                        <div className="how__card_description">
+                            <h3>Прилежно учимся и практикуемся</h3>
+                            <p>Проходим все практики и теорию, оформляем портфолио работ.</p>
+                        </div>
+                    </div>
+                    <div className="how__card_mob">
+                        <span>3</span>
+                        <div className="how__card_description">
+                            <h3>Поиск работы</h3>
+                            <p>Формируем резюме, готовим портфолио к проверкам, используем все доступные платформы и предложения от наших партнеров</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <img src={planet_s} alt="" className="planet_s" />
