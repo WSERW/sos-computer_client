@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getCourse } from '../api'
+import { BASE_URL, downloadFile, getCourse } from '../api'
 
 import '../css/course.css'
 
@@ -41,7 +41,7 @@ const Course = () => {
                                         <li className="header__item">{spec.text}</li>
                                     ) : ''}
                                 </ul>
-                                <button>Скачать программу</button>
+                                <button onClick={() => { downloadFile(data.id) }}>Скачать программу</button>
                             </div>
                         ) : (
                             <div className="header__text">

@@ -27,7 +27,7 @@ const Plan = ({ plans }) => {
                     {plans ? plans.map((plan, id) =>
                         <PlanCard {...plan} key={id} />
                     ) : [0, 0, 0].map((plan, id) =>
-                        <PlanCardSkeleton/>
+                        <PlanCardSkeleton key={id}/>
                     )}
                 </div>
             </div>

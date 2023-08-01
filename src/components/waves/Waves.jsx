@@ -49,7 +49,7 @@ const Waves = () => {
                 ctx.lineTo(i * 50 + 50, cnvHeight);
                 ctx.fill();
             }
-            ctx.fillStyle = '#232438';
+            ctx.fillStyle = '#242538';
             for (let i = 0; i < waves2.length; i++) {
                 ctx.beginPath();
                 ctx.moveTo(i * 50 - 25, cnvHeight);

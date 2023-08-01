@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MouseParallax } from 'react-just-parallax';
 
 import { DataContext } from "../contexts/DataContext";
+import { ModalContext } from '../contexts/ModalContext';
 
 import girl from '../img/girl.svg'
 import blop from '../img/blop.svg'
@@ -29,6 +30,7 @@ import Course from '../components/course/Course'
 
 const Index = () => {
     const { courses, demo } = useContext(DataContext);
+    const { openModal } = useContext(ModalContext);
 
     return (
         <div>
@@ -43,7 +45,7 @@ const Index = () => {
                                 <li className="header__item">Индивидуальный график</li>
                                 <li className="header__item">Личный педагог</li>
                             </ul>
-                            <button>Заказать звонок</button>
+                            <button onClick={() => openModal('order')}>Заказать звонок</button>
                         </div>
                         <div className="header__img">
                             <div className="blop-wrapper">

@@ -27,8 +27,7 @@ const ModalEnroll = () => {
     e.preventDefault();
     postOrder(formData, token)
       .then(response => {
-        console.log(response.ok)
-        openModal("Спасибо с вами свяжутся")
+        openModal('success', "Спасибо с вами свяжутся")
       })
       .catch(error => {
         // Обработка ошибки

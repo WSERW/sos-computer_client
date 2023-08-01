@@ -1,23 +1,34 @@
 import React, { createContext, useState } from 'react';
 
 const ModalContext = createContext();
-
 const ModalProvider = ({ children }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [modalContent, setModalContent] = useState('');
+  const [modalStates, setModalStates] = useState({});
 
-  const openModal = (content) => {
-    setShowModal(true);
-    setModalContent(content);
+  const openModal = (modalId, modalContent = "") => {
+    setModalStates((prevModalStates) => ({
+      ...prevModalStates,
+      [modalId]: { state: true, content: modalContent },
+    }));
+    console.log(modalStates)
+    console.log(modalId, modalContent)
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-    setModalContent('');
+  const closeModal = (modalId) => {
+    setModalStates((prevModalStates) => ({
+      ...prevModalStates,
+      [modalId]: { state: false, content: '' },
+    }));
+  };
+
+  const isModalOpen = (modalId) => {
+    if (modalStates[modalId]) {
+        return modalStates[modalId].state || false;
+    }
+    return false;
   };
 
   return (
-    <ModalContext.Provider value={{ showModal, modalContent, openModal, closeModal }}>
+    <ModalContext.Provider value={{ modalStates, openModal, closeModal, isModalOpen }}>
       {children}
     </ModalContext.Provider>
   );

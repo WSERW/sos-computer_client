@@ -17,7 +17,7 @@
     position: absolute;
     width: 975px;
     height: 730px;
-    top: 100px;
+    top: 30px;
     left: 50%;
     transform: translate(-50%);
     background: #292B45;
@@ -172,4 +172,88 @@
     width: 45px;
     border-radius: 5px;
     background: #6F78C8;
+}
+
+
+
+@media screen and (max-width: 425px) {
+    .popup__wrapper {
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        background: transparent;
+    }
+
+    .popup__content {
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+    .popup__head {
+        display: none;
+    }
+    .popup__body {
+        flex-direction: column;
+        height: 500px;
+    }
+    .popup__categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0;
+        flex: 0 0 0;
+    }
+    .popup__categories button {
+        padding: 6px 10px;
+        background-color: var(--text-blue);
+        color: var(--white);
+        font-weight: 400;
+        transition: 0.3s;
+        font-size: 12px;
+        width: auto;
+        margin: 0;
+        height: 28px;
+    }
+    .popup__categories button:hover,
+    .popup__categories button.active {
+        background-color: var(--light-blue);
+        box-shadow: none;
+        filter: drop-shadow(0px 0px 6px rgba(133, 136, 200, 0.80));
+    }
+    .popup__courses {
+        padding: 0;
+    }
+    .popup__course {
+        height: 75px;
+    }
+    .popup__course__title {
+        padding: 0;
+        height: 100%;
+        gap: 10px;
+    }
+    .popup__course__age {
+        width: 90px;
+        font-size: 14px;
+        flex-shrink: 0;
+    }
+    .popup__course__name {
+        font-size: 16px;
+        margin: 0;
+    }
+    .popup__course__apps {
+        display: none;
+    }
+    .popup__course__spec {
+        display: none;
+    }
 }

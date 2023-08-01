@@ -31,7 +31,7 @@ const PopUp = ({ isPopup, closePopup }) => {
             <div className="popup__content">
                 <div className="popup__head">
                     <h2>Курсы</h2>
-                    <button><img src={exit} alt="" onClick={closePopup} /></button>
+                    <button onClick={closePopup}><img src={exit} alt=""  /></button>
                 </div>
                 <div className="popup__body">
                     <div className="popup__categories">
@@ -42,8 +42,8 @@ const PopUp = ({ isPopup, closePopup }) => {
                         <button className={`popup__category ${tag == 'office' ? 'active' : ''}`} onClick={() => { setTag('office') }}>Офисные и SEO SMM</button>
                     </div>
                     <div className="popup__courses">
-                        {filtredCourses ? filtredCourses.map(course =>
-                            <div className="popup__course">
+                        {filtredCourses ? filtredCourses.map((course) =>
+                            <div className="popup__course" key={course.id}>
                                 <div className="popup__course__description">
                                     <div className="popup__course__title">
                                         <div className="popup__course__age">{course.tag == 'child' ? '6 - 18' : '14 - 99'} лет</div>
@@ -55,8 +55,8 @@ const PopUp = ({ isPopup, closePopup }) => {
                                 </div>
                                 <div className="popup__course__spec">
                                     <ul>
-                                        {course.specs.map(spec =>
-                                            <li>{spec.text}</li>
+                                        {course.specs.map((spec) =>
+                                            <li key={spec.id}>{spec.text}</li>
                                         )}
                                     </ul>
                                 </div>

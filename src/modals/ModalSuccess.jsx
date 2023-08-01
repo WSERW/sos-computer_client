@@ -7,11 +7,11 @@ import inst from '../img/inst_c.svg';
 import vk from '../img/vk_c.svg';
 
 const ModalSuccess = () => {
-    const { modalContent, closeModal } = useContext(ModalContext)
+    const { modalStates, closeModal } = useContext(ModalContext)
 
     const wrapperHandler = (e) => {
         if (e.target.className.includes('modal__wrapper')) {
-            closeModal()
+            closeModal('success')
         }
     }
 
@@ -19,14 +19,14 @@ const ModalSuccess = () => {
         <div className='modal__wrapper modal--success' onClick={(e) => { wrapperHandler(e) }}>
             <div className="modal__content">
                 <h2>Спасибо за заявку</h2>
-                <p>{modalContent}</p>
+                <p>{modalStates['success'].content}</p>
                 <ul>
                     <li><a href="#"><img src={ok} alt="" /></a></li>
                     <li><a href="#"><img src={yt} alt="" /></a></li>
                     <li><a href="#"><img src={inst} alt="" /></a></li>
                     <li><a href="#"><img src={vk} alt="" /></a></li>
                 </ul>
-                <button onClick={closeModal}>Отлично!</button>
+                <button onClick={() => { closeModal('success') }}>Отлично!</button>
             </div>
         </div>
     )

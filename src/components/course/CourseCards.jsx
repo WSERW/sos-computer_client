@@ -66,8 +66,8 @@ const CourseCards = ({ courses }) => {
                                 <CourseCard {...course} />
                             </div>
                         </SwiperSlide>
-                    ) : [0, 0, 0, 0, 0, 0].map(() =>
-                        <SwiperSlide>
+                    ) : [0, 0, 0, 0, 0, 0].map((elem, id) =>
+                        <SwiperSlide key={id}>
                             <div className="ways__slide">
                                 <CourseCardSkeleton />
                             </div>

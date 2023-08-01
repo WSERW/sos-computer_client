@@ -1,15 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ModalContext } from '../../contexts/ModalContext'
 
 import './style.css'
 
 import phoneSm from '../../img/phone_sm.svg'
 import send from '../../img/send.svg'
-import inst from '../../img/inst.svg'
-import vk from '../../img/vk.svg'
-import yt from '../../img/yt.svg'
-
+import { ReactComponent as Inst } from '../../img/inst.svg'
+import { ReactComponent as Vk } from '../../img/vk.svg'
+import { ReactComponent as Yt } from '../../img/yt.svg'
 
 const Contacts = () => {
+
+    const { openModal } = useContext(ModalContext);
+
     return (
         <section className="contacts" id='contacts'>
             <div className="container">
@@ -40,9 +43,9 @@ const Contacts = () => {
                         <div className="contacts__phones_wrapper">
                             <h3>Телефоны:</h3>
                             <ul className="contacts__phones">
-                                <li className="contacts__phone"><img src={phoneSm} alt="" /> <span>+38(095) - 462 - 46 - 72</span> <a href="viber://add?number=380954624672">Viber</a> <a href="https://api.whatsapp.com/send?phone=380954624672">Whatsapp</a> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
-                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7(949) - 405 - 68 - 46</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
-                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7(977) - 012 - 01 - 36</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                                <li className="contacts__phone"><img src={phoneSm} alt="" /> <span>+38 (095) - 462 - 46 - 72</span> <a href="viber://add?number=380954624672">Viber</a> <a href="https://api.whatsapp.com/send?phone=380954624672">Whatsapp</a> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7 (949) - 405 - 68 - 46</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
+                                <li className="contacts__phone"><img src={phoneSm} alt="" />  <span>+7 (977) - 012 - 01 - 36</span> <a href="https://t.me/SosComputerAcademy">Telegram</a></li>
                             </ul>
                         </div>
                         <h3>Почта:</h3>
@@ -52,18 +55,18 @@ const Contacts = () => {
                         <h3>Следите за нами в сосетях:</h3>
                         <ul className="contacts__links">
                             <li className="contacts__link">
-                                <a href="https://www.instagram.com/computercourses_in_donetsk/"><img src={inst} alt="" /></a>
+                                <a href="https://www.instagram.com/computercourses_in_donetsk/"><Inst /></a>
                             </li>
                             <li className="contacts__link">
-                                <a href="https://vk.com/sos_computer_academy"><img src={vk} alt="" /></a>
+                                <a href="https://vk.com/sos_computer_academy"><Vk /></a>
 
                             </li>
                             <li className="contacts__link">
-                                <a href="https://www.youtube.com/@SosComputerAcademy"><img src={yt} alt="" /></a>
+                                <a href="https://www.youtube.com/@SosComputerAcademy"><Yt /></a>
 
                             </li>
                         </ul>
-                        <button>Заказать звонок</button>
+                        <button onClick={() => { openModal('order') }}>Заказать звонок</button>
                     </div>
                 </div>
             </div>
