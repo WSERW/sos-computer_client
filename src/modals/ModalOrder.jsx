@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
-
+import Cookies from 'js-cookie';
 import { getCSRF, postOrder } from '../api'
 import { ModalContext } from '../contexts/ModalContext'
 
@@ -14,8 +14,9 @@ const ModalOrder = () => {
     const { openModal, closeModal } = useContext(ModalContext);
 
     useEffect(() => {
-        getCSRF()
-            .then(data => setToken(data.csrfToken))
+        setToken(Cookies.get('csrftoken'))
+        // getCSRF()
+        //     .then(data => setToken(data.csrfToken))
     }, [])
 
 
