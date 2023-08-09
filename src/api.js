@@ -1,6 +1,6 @@
 // const BASE_URL = 'https://api.sos-computer.site/';
 // const BASE_URL = 'http://127.0.0.1:8000/';
-const BASE_URL = 'http://185.46.8.102/';
+const BASE_URL = 'https://185-46-8-102.cloudvps.regruhosting.ru/';
 
 async function get(endpoint = '') {
     const response = await fetch(BASE_URL + endpoint);
