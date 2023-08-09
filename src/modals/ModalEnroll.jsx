@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
-
+import Cookies from 'js-cookie'
 import { getCSRF, postOrder } from '../api'
 import { ModalContext } from '../contexts/ModalContext'
 
@@ -12,10 +12,24 @@ const ModalEnroll = () => {
   })
 
   const { openModal } = useContext(ModalContext);
-
+  function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
   useEffect(() => {
     getCSRF()
-      .then(data => setToken(data.csrfToken))
+      .then(data => { setToken(getCookie('csrftoken')) })
+      .then(() => { console.log(document.cookie, getCookie('csrftoken')) })
   }, [])
 
 

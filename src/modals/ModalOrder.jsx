@@ -14,9 +14,10 @@ const ModalOrder = () => {
     const { openModal, closeModal } = useContext(ModalContext);
 
     useEffect(() => {
-        setToken(Cookies.get('csrftoken'))
-        // getCSRF()
-        //     .then(data => setToken(data.csrfToken))
+        getCSRF()
+            .then(data => (setToken(Cookies.get('csrftoken')))
+            .then(console.log(token),Cookies.get('csrftoken'))
+        )
     }, [])
 
 
