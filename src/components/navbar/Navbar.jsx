@@ -7,6 +7,7 @@ import { ReactComponent as Inst } from '../../img/inst.svg'
 import { ReactComponent as Vk } from '../../img/vk.svg'
 import { ReactComponent as Yt } from '../../img/yt.svg'
 import burger from '../../img/burger.svg'
+import arrow from '../../img/arrow.svg'
 import PopUp from '../popup/PopUp';
 import Logo from '../Logo';
 
@@ -16,32 +17,34 @@ const Navbar = () => {
 
     const showPopup = () => {
         setIsPopup(true)
+        document.documentElement.style.overflowY='hidden'
     }
 
     const closePopup = () => {
         setIsPopup(false)
+        document.documentElement.style.overflowY='scroll'
         console.log('close popup')
 
     }
 
     const togglePopup = () => {
-        setIsPopup(!isPopup)
+        isPopup?closePopup(e):showPopup()
     }
 
     const openNavbar = () => {
         setIsNavbar(true)
+        document.documentElement.style.overflowY='hidden'
     }
 
     const closeNavbar = (e) => {
-        if (e.target.id != 'course__toggler') {
+        if (e.target.id != 'course__toggler' && !e.target.classList.contains('popup__category')) {
             setIsNavbar(false)
-            console.log(1)
+            document.documentElement.style.overflowY='scroll'
         }
-        console.log(2)
     }
 
-    const toggleNavbar = () => {
-        setIsNavbar(!isNavbar)
+    const toggleNavbar = (e) => {
+        isNavbar?closeNavbar(e):openNavbar()
     }
 
     return (
@@ -72,9 +75,9 @@ const Navbar = () => {
                     </div>
                     <ul className={`navbar__nav ${isNavbar ? 'active' : ''}`} onClick={(e) => { closeNavbar(e) }}>
                         <li className="navbar__item"><Link to='/' className="navbar__link">Про академию</Link></li>
-                        <li className="navbar__item"><button id='course__toggler' className="navbar__link" onClick={togglePopup} >Курсы</button></li>
-                        <PopUp isPopup={isPopup} closePopup={closePopup} />
                         <li className="navbar__item"><a href="#contacts" className="navbar__link">Контакты</a></li>
+                        <li className="navbar__item"><button id='course__toggler' className="navbar__link" onClick={togglePopup} >Курсы <img src={arrow} alt="" className={`navbar__drop__icon ${isPopup?'active':''}`} /></button></li>
+                        <PopUp isPopup={isPopup} closePopup={closePopup} />
                     </ul>
                     <button className='navbar__toggler' onClick={toggleNavbar}>
                         <img src={burger} alt="" />

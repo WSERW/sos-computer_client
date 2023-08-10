@@ -56,7 +56,7 @@ export const postOrder = async (data, token) => {
 }
 
 export const downloadFile = async (id) => {
-    let url_path = `${BASE_URL}/programm/${id}/`
+    let url_path = `${BASE_URL}programm/${id}/`
     console.log(url_path)
     const response = await fetch(url_path, {
         method: 'GET',

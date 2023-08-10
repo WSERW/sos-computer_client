@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { ModalContext } from '../../contexts/ModalContext'
-
+import Cookies from 'js-cookie';
+import { getCSRF, postOrder } from '../../api'
 import './style.css'
 
 import phoneSm from '../../img/phone_sm.svg'
@@ -10,21 +11,49 @@ import { ReactComponent as Vk } from '../../img/vk.svg'
 import { ReactComponent as Yt } from '../../img/yt.svg'
 
 const Contacts = () => {
+    const [token, setToken] = useState(null)
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        message: ''
+    })
 
     const { openModal } = useContext(ModalContext);
+
+    useEffect(() => {
+        getCSRF()
+            .then(data => (setToken(Cookies.get('csrftoken')))
+                .then(console.log(token), Cookies.get('csrftoken'))
+            )
+    }, [])
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        postOrder(formData, token)
+            .then(response => {
+                openModal('success', "Спасибо с вами свяжутся")
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке заявки:', error);
+            });
+    }
 
     return (
         <section className="contacts" id='contacts'>
             <div className="container">
                 <div className="contacts__wrapper">
-                    <form action="" className="contacts__form">
+                    <form action="" className="contacts__form" onSubmit={(e) => { handleSubmit(e) }}>
                         <label htmlFor="">Оставьте ваше имя</label>
-                        <input type="text" name="" id="" placeholder='Имя...' />
+                        <input type="text" name='name' value={formData.name} id="" placeholder='Имя...'  onChange={(e) => { handleChange(e) }}/>
                         <label htmlFor="">Номер телефона</label>
-                        <input type="text" name="" id="" placeholder='+380...' />
+                        <input type="text"  name='phone' value={formData.phone} required  id="" placeholder='+380...' onChange={(e) => { handleChange(e) }} />
                         <label htmlFor="">Напишите нам</label>
                         <div className="contacts__comment">
-                            <textarea placeholder='Введите текст...'></textarea>
+                            <textarea placeholder='Введите текст...' name='message' value={formData.message}  onChange={(e) => { handleChange(e) }}></textarea>
                             <button><img src={send} alt="" /></button>
                         </div>
                         <div className="contacts__copyright">

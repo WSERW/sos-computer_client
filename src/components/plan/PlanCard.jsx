@@ -1,6 +1,9 @@
-import React from 'react'
+import { useContext } from 'react'
+import { ModalContext } from '../../contexts/ModalContext';
 
 const PlanCard = ({ name, level = 'начальный', specs = [], link, price, discount, tag }) => {
+    const { openModal } = useContext(ModalContext);
+
     if (!specs.length) {
         specs = [{ text: 'описание' }, { text: 'описание' }, { text: 'описание' }]
     }
@@ -17,7 +20,7 @@ const PlanCard = ({ name, level = 'начальный', specs = [], link, price,
                 )}
             </ul>
             <p className="plan__price">{priceLabel} {priceDiscountLabel}</p>
-            <a href={link} className="plan__card_link">Записаться на пробное</a>
+            <a href={link} className="plan__card_link" onClick={() => openModal('order')}>Записаться на пробное</a>
             <div className={`plan__card_level ${level}`}>{levelTag}</div>
         </div>
     )

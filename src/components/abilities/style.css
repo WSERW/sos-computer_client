@@ -79,10 +79,12 @@
 
     .abilities__cards {
         flex-direction: column;
+        align-items: center;
     }
 
     .abilities__card {
         padding-top: 80px;
+        width: 300px;
     }
 
     .abilities__card_head {

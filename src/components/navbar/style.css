@@ -57,7 +57,10 @@ nav {
     margin-left: auto;
 }
 
-.navbar__item {}
+.navbar__item {
+    display: flex;
+    justify-content: start;
+}
 
 
 .navbar__link {
@@ -99,9 +102,24 @@ button.navbar__link {
     display: inline-block;
     background-color: transparent;
 }
-
+#course__toggler {
+    display: flex;
+    align-items: center;
+}
+.navbar__drop__icon {
+    display: none;
+    margin-left: auto;
+    transition: 0.3s;
+    transform: rotate(180deg);
+}
 
 @media screen and (max-width: 425px) {
+    .navbar__drop__icon {
+        display: block;
+    }
+    .navbar__drop__icon.active {
+        transform: rotate(0);
+    }
     .navbar__nav.active {
         display: flex !important;
         position: fixed;

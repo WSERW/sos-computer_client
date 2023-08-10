@@ -26,7 +26,7 @@ const Course = () => {
     useEffect(() => {
         getCourse(params.id)
             .then(data => setData(data))
-    }, []);
+    }, [params]);
     return (
         <div>
             <header>

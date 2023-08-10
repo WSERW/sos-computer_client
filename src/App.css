@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Nunito', sans-serif;
 }
 
 :root {
@@ -68,7 +69,7 @@ textarea {
     font-size: 16px;
 }
 
-input {
+input:not([type='radio']) {
     border: 1px solid var(--light-gray);
     /* color: ; */
     border-radius: 5px;
@@ -175,11 +176,11 @@ section {
     z-index: 100;
 }
 
-.modal--success .modal__content{
+.modal--success .modal__content {
     width: 355px;
 }
 
-.modal__order .modal__content{
+.modal__order .modal__content {
     width: 300px;
     position: absolute;
     top: 50%;
@@ -187,6 +188,7 @@ section {
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .modal--success .modal__content {
     position: absolute;
     top: 50%;
@@ -224,6 +226,86 @@ section {
 .modal__content p {
     color: var(--background);
     margin-bottom: 25px;
+}
+
+.modal__order .modal__content {
+    padding: 15px;
+}
+
+.modal__order h2 {
+    font-size: 22px;
+    text-align: left;
+}
+
+.modal__order input:not([type='radio']),
+.modal__order button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal__order .modal__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__order .modal__online {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal__order .modal__online p {
+    font-size: 14px;
+}
+
+.modal__order .modal__online__radio {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    flex-shrink: 0;
+}
+
+.modal__order label {
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+}
+
+.modal__order .modal__online__radio input[type='radio'] {
+    width: 15px;
+    height: 15px;
+
+}
+
+.modal__order .modal__socio {
+    margin-bottom: 10px;
+}
+
+.modal__order .modal__socio li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.modal__order .close {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 0;
+}
+
+.modal__order input:last-of-type:not([type='radio']) {
+    margin-bottom: 20px;
+}
+
+.modal__order p {
+    font-size: 11px;
+    text-align: left;
+    margin: 0;
 }
 
 .modal__enroll {
@@ -481,12 +563,18 @@ section {
 
     .header {
         background: url(./img/header_bg.png) no-repeat;
+        background-size: cover;
         padding: 30px 15px;
         border-radius: 10px;
         margin-bottom: 20px;
         position: relative;
         z-index: 1;
         overflow: hidden;
+        justify-content: center;
+    }
+
+    .header__text {
+        /* flex-basis: 100%; */
     }
 
     .header::before {
@@ -579,11 +667,13 @@ section {
         font-size: 12px;
         font-weight: 700;
     }
+
     .plan__card_description::before {
         margin-right: 8px;
         vertical-align: middle;
         /* font-size: 16px; */
     }
+
     .for {
         display: none;
     }
@@ -612,10 +702,12 @@ section {
 
     .sertificate__wrapper {
         flex-direction: column-reverse;
+        align-items: center;
     }
 
     .sertificate__img {
         /* display: none; */
+        width: 100%;
     }
 
     .sertificate__form {

@@ -27,10 +27,13 @@ const CourseCards = ({ courses }) => {
                 }}
                 breakpoints={{
                     0: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.3,
+                    },
+                    375: {
+                        slidesPerView: 1.5,
                     },
                     400: {
-                        slidesPerView: 2,
+                        slidesPerView: 1.7,
                         centeredSlides: false,
                     },
                     639: {

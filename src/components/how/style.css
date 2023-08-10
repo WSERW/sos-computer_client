@@ -137,7 +137,7 @@
         border-radius: 10px;
         background: linear-gradient(46deg, #8F48E6 0%, #683DA0 54.48%, #523680 100%), linear-gradient(46deg, #4B55B9 0%, #5B60A7 54.48%, #333681 100%);
         display: flex;
-        width: 300px;
+        min-width: 300px;
         height: 140px;
         padding-left: 15px;
         padding-right: 15px;

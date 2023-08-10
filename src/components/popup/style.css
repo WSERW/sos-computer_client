@@ -28,7 +28,7 @@
 
 .popup__head {
     width: 975px;
-    height: 60px;
+    height: 70px;
     box-sizing: border-box;
     padding: 0 30px 0 50px;
     display: flex;
@@ -38,7 +38,7 @@
 }
 
 .popup__head h2 {
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .popup__head button {
@@ -130,13 +130,29 @@
     color: #6979B8;
     font-size: 22px;
     font-weight: 700;
-    margin-bottom: 20px;
+    line-height: 1;
+    margin-bottom: 10px;
 }
 
+.popup__category:hover {
+    box-shadow:none;
+    background: #3F4281;
+    color:  #FFF;
+
+}
+
+.popup__category:active,
 .popup__category.active {
+    color:  #FFF;
+    background: var(--unnamed, #8588C8);
+    box-shadow: 0px 0px 6px 0px rgba(133, 136, 200, 0.80);
+}
+
+
+/* .popup__category.active {
     background: #242538;
     color: #fff;
-}
+} */
 
 .popup__course {
     border-radius: 5px;
@@ -199,13 +215,16 @@
         background: transparent;
         box-shadow: none;
     }
+
     .popup__head {
         display: none;
     }
+
     .popup__body {
         flex-direction: column;
         height: 500px;
     }
+
     .popup__categories {
         display: flex;
         flex-wrap: wrap;
@@ -213,6 +232,7 @@
         padding: 0;
         flex: 0 0 0;
     }
+
     .popup__categories button {
         padding: 6px 10px;
         background-color: var(--text-blue);
@@ -224,35 +244,43 @@
         margin: 0;
         height: 28px;
     }
+
     .popup__categories button:hover,
     .popup__categories button.active {
         background-color: var(--light-blue);
         box-shadow: none;
         filter: drop-shadow(0px 0px 6px rgba(133, 136, 200, 0.80));
     }
+
     .popup__courses {
         padding: 0;
     }
+
     .popup__course {
         height: 75px;
     }
+
     .popup__course__title {
         padding: 0;
         height: 100%;
         gap: 10px;
     }
+
     .popup__course__age {
         width: 90px;
         font-size: 14px;
         flex-shrink: 0;
     }
+
     .popup__course__name {
         font-size: 16px;
         margin: 0;
     }
+
     .popup__course__apps {
         display: none;
     }
+
     .popup__course__spec {
         display: none;
     }
