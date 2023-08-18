@@ -1,33 +1,28 @@
-import React, {useEffect,useState} from 'react'
+import { createBrowserRouter, createRoutesFromElements, Route, RouteProvider, RouterProvider, useLocation } from 'react-router-dom'
+import { ModalProvider } from './contexts/ModalContext';
+import RootLayout from './layouts/RootLayout';
+import Course from './pages/Course';
 import Index from './pages/Index';
+import NotFound from './pages/NotFound';
 
 const App = () => {
-    const [data, setData] = useState('')
-    const [url, setUrl] = useState('')
-    useEffect(() => {
-        getData()
-    },[]);
 
-    const getData = (url = 'https://api.sos-computer.site/') => {
-        // const url = 'http://127.0.0.1:8000/'
-        fetch(url,{
-            method: 'GET',
-        })
-        .then(response => response.json())
-        .then(response => setData(response))
-        .catch(response => console.log(response,url))
+    const router = createBrowserRouter(
+        createRoutesFromElements((
+            <Route path='/' element={<RootLayout />} >
+                <Route path='/' element={<Index />} />
+                <Route path='course/:id' element={<Course />} />
+                <Route path='*' element={<NotFound />} />
+            </Route>
 
-    }
+        ))
+    )
     return (
-        <div>
-            {/* <div>
-                {data}
-            </div>
-            
-            <input type="text" value={url} onChange={e => {setUrl(e.target.value)}}/>
-            <button onClick={e => {getData(url)}}>Сделать запрос</button> */}
-            <Index/>
-        </div>
+        <>
+            <ModalProvider>
+                <RouterProvider router={router} />
+            </ModalProvider>
+        </>
 
     )
 }

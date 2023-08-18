@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { MouseParallax } from 'react-just-parallax';
+import Helmet from 'react-helmet'
+
 
 import { DataContext } from "../contexts/DataContext";
 import { ModalContext } from '../contexts/ModalContext';
@@ -29,11 +31,16 @@ import Course from '../components/course/Course'
 
 
 const Index = () => {
+
     const { courses, demo } = useContext(DataContext);
     const { openModal } = useContext(ModalContext);
 
     return (
         <div>
+            <Helmet>
+                <title>Сос Компьютер | Куры в Донецке ДНР</title>
+                <meta name="description" content={`Ведём набор на компьютерные курсы для детей и взрослых. У нас множество направлений: программирование, дизайн, 3д моделирование, курсы для детей и т.д. Также есть возможность обучаться онлайн.`} />
+            </Helmet>
             <header>
                 <div className="container">
                     <div className="header">

@@ -10,14 +10,14 @@ const ProgramCard = ({ number, title, paragraphs }) => {
             <div className="program__card_body">
                 <ul className="program__card_paragraphs" >
                     {leftParagraphs.map((paragraph, id) =>
-                        <li className="program__card_paragraph">
+                        <li className="program__card_paragraph" key={id}>
                             {paragraph.name}
                         </li>
                     )}
                 </ul>
                 <ul className="program__card_paragraphs" >
                     {rightsParagraphs.map((paragraph, id) =>
-                        <li className="program__card_paragraph">
+                        <li className="program__card_paragraph" key={id}>
                             {paragraph.name}
                         </li>
                     )}

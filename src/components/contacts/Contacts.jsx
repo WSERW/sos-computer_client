@@ -22,9 +22,8 @@ const Contacts = () => {
 
     useEffect(() => {
         getCSRF()
-            .then(data => (setToken(Cookies.get('csrftoken')))
-                .then(console.log(token), Cookies.get('csrftoken'))
-            )
+            .then(data => (setToken(Cookies.get('csrftoken'))))
+            .then(console.log(token), Cookies.get('csrftoken'))
     }, [])
 
     const handleChange = (e) => {
@@ -48,12 +47,12 @@ const Contacts = () => {
                 <div className="contacts__wrapper">
                     <form action="" className="contacts__form" onSubmit={(e) => { handleSubmit(e) }}>
                         <label htmlFor="">Оставьте ваше имя</label>
-                        <input type="text" name='name' value={formData.name} id="" placeholder='Имя...'  onChange={(e) => { handleChange(e) }}/>
+                        <input type="text" name='name' value={formData.name} id="" placeholder='Имя...' onChange={(e) => { handleChange(e) }} />
                         <label htmlFor="">Номер телефона</label>
-                        <input type="text"  name='phone' value={formData.phone} required  id="" placeholder='+380...' onChange={(e) => { handleChange(e) }} />
+                        <input type="text" name='phone' value={formData.phone} required id="" placeholder='+380...' onChange={(e) => { handleChange(e) }} />
                         <label htmlFor="">Напишите нам</label>
                         <div className="contacts__comment">
-                            <textarea placeholder='Введите текст...' name='message' value={formData.message}  onChange={(e) => { handleChange(e) }}></textarea>
+                            <textarea placeholder='Введите текст...' name='message' value={formData.message} onChange={(e) => { handleChange(e) }}></textarea>
                             <button><img src={send} alt="" /></button>
                         </div>
                         <div className="contacts__copyright">

@@ -1,33 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, createRoutesFromElements, Route, RouteProvider, RouterProvider } from 'react-router-dom'
+import { yandexMetrikaInit, trackPageView } from './yandexMetrika';
 import { ModalProvider } from './contexts/ModalContext';
 import RootLayout from './layouts/RootLayout';
 import Course from './pages/Course';
 import Index from './pages/Index';
+import NotFound from './pages/NotFound';
 
 import './App.css';
 
 import reportWebVitals from './reportWebVitals';
-import NotFound from './pages/NotFound';
+import App from './App';
 
-const router = createBrowserRouter(
-  createRoutesFromElements((
-    <Route path='/' element={<RootLayout />} >
-      <Route path='/' element={<Index />} />
-      <Route path='course/:id' element={<Course />} />
-      <Route path='*' element={<NotFound />} />
-    </Route>
+// const router = createBrowserRouter(
+//   createRoutesFromElements((
+//     <Route path='/' element={<RootLayout />} >
+//       <Route path='/' element={<Index />} />
+//       <Route path='course/:id' element={<Course />} />
+//       <Route path='*' element={<NotFound />} />
+//     </Route>
 
-  ))
-)
+//   ))
+// )
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ModalProvider>
+    <App/>
+    {/* <ModalProvider>
       <RouterProvider router={router} />
-    </ModalProvider>
+    </ModalProvider> */}
   </React.StrictMode>
 );
 

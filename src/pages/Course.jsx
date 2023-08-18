@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Helmet from 'react-helmet'
 import { downloadFile, getCourse } from '../api'
 
 import '../css/course.css'
@@ -29,6 +30,10 @@ const Course = () => {
     }, [params]);
     return (
         <div>
+            <Helmet>
+                <title>Сос Компьютер | Курс {data?data.name.toLowerCase():''} в Донецке ДНР</title>
+                <meta name="description" content={`Изучаем ${data?data.name.toLowerCase():''} на курсах для детей и взрослых. Наша школа it поможет вам освоить новую востребованную профессию в сети наших центров в ДНР, а также онлайн, со своим преподавателем.`} />
+            </Helmet>
             <header>
                 <div className="container">
                     <div className="header">
@@ -37,8 +42,8 @@ const Course = () => {
                                 <h1>Курс <span>"{data ? data.name : ''}"</span></h1>
                                 <p>{data ? data.description : ''}</p>
                                 <ul className="header__list">
-                                    {data ? data.specs.map(spec =>
-                                        <li className="header__item">{spec.text}</li>
+                                    {data ? data.specs.map((spec, id) =>
+                                        <li className="header__item" key={id}>{spec.text}</li>
                                     ) : ''}
                                 </ul>
                                 <button onClick={() => { downloadFile(data.id) }}>Скачать программу</button>

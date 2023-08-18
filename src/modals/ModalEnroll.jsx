@@ -29,8 +29,7 @@ const ModalEnroll = () => {
   useEffect(() => {
     getCSRF()
       .then(data => { setToken(getCookie('csrftoken')) })
-      .then(() => { console.log(document.cookie, getCookie('csrftoken')) })
-  }, [])
+  }, [token])
 
 
   const handleChange = (e) => {
