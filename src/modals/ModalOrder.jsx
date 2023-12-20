@@ -66,9 +66,9 @@ const ModalOrder = () => {
                         </div>
                     </div>
                     <ul className="modal__socio">
-                        <li><a href="#"><img src={tg} alt="" /></a></li>
-                        <li><a href="#"><img src={vb} alt="" /></a></li>
-                        <li><a href="#"><img src={wa} alt="" /></a></li>
+                        <li><a href="https://t.me/SosComputerAcademy"><img src={tg} alt="" /></a></li>
+                        <li><a href="viber://add?number=380954624672"><img src={vb} alt="" /></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=380954624672"><img src={wa} alt="" /></a></li>
                     </ul>
                     <button type='submit'>Получить консультацию</button>
                     <p>Нажимая на кнопку, я соглашаюсь на обработку персональных данных и с правилами пользования Платформой</p>

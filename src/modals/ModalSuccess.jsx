@@ -21,10 +21,10 @@ const ModalSuccess = () => {
                 <h2>Спасибо за заявку</h2>
                 <p>{modalStates['success'].content}</p>
                 <ul>
-                    <li><a href="#"><img src={ok} alt="" /></a></li>
-                    <li><a href="#"><img src={yt} alt="" /></a></li>
-                    <li><a href="#"><img src={inst} alt="" /></a></li>
-                    <li><a href="#"><img src={vk} alt="" /></a></li>
+                    <li><a href="https://ok.ru/sos.computer.academy"><img src={ok} alt="" /></a></li>
+                    <li><a href="https://www.youtube.com/@SosComputerAcademy"><img src={yt} alt="" /></a></li>
+                    <li><a href="https://www.instagram.com/computercourses_in_donetsk/"><img src={inst} alt="" /></a></li>
+                    <li><a href="https://vk.com/sos_computer_academy"><img src={vk} alt="" /></a></li>
                 </ul>
                 <button onClick={() => { closeModal('success') }}>Отлично!</button>
             </div>
